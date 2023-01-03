@@ -31,10 +31,10 @@ export const ROUTES: Routes = [
         title: 'Beispiel',
     },
     {
-        path: 'buecher',
+        path: 'kunden',
         // Lazy Loading (statt Eager Loading) durch dynamische Imports (seit ES 2020)
         // loadChildren statt component wie bei '/'
         // https://angular.io/guide/lazy-loading-ngmodules
-        loadChildren: () => import('./buch/routes').then(mod => mod.ROUTES),
+        loadChildren: () => import('./kunde/routes').then(mod => mod.ROUTES),
     },
 ];

@@ -15,16 +15,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { BalkendiagrammComponent } from './diagramme/balkendiagramm.component';
-import { CreateBuchComponent } from './create-buch/create-buch.component';
-import { DetailsBuchComponent } from './details-buch/details-buch.component';
+// import { BalkendiagrammComponent } from './diagramme/balkendiagramm.component';
+// import { CreateBuchComponent } from './create-buch/create-buch.component';
+// import { DetailsBuchComponent } from './details-buch/details-buch.component';
 import { HomeComponent } from '../home/home.component';
-import { LiniendiagrammComponent } from './diagramme/liniendiagramm.component';
+// import { LiniendiagrammComponent } from './diagramme/liniendiagramm.component';
 import { type Routes } from '@angular/router';
-import { SucheBuecherComponent } from './suche-buecher/suche-buecher.component';
-import { TortendiagrammComponent } from './diagramme/tortendiagramm.component';
-import { UpdateBuchComponent } from './update-buch/update-buch.component';
-import { canDeactivateGuard } from './create-buch/create-deactivate.guard';
+// import { SucheBuecherComponent } from './suche-buecher/suche-buecher.component';
+// import { TortendiagrammComponent } from './diagramme/tortendiagramm.component';
+// import { UpdateBuchComponent } from './update-buch/update-buch.component';
+// import { canDeactivateGuard } from './create-buch/create-deactivate.guard';
 import { isAdminGuard } from '../auth/isAdmin.guard';
 
 // Route-Definitionen fuer das Feature-Modul "buch":
@@ -32,15 +32,15 @@ import { isAdminGuard } from '../auth/isAdmin.guard';
 export const ROUTES: Routes = [
     {
         path: 'suche',
-        component: SucheBuecherComponent,
+        // component: SucheBuecherComponent,
         title: 'Suche',
     },
     {
         path: 'create',
-        component: CreateBuchComponent,
+        // component: CreateBuchComponent,
         title: 'Neues Buch',
         canMatch: [isAdminGuard],
-        canDeactivate: [canDeactivateGuard],
+        // canDeactivate: [canDeactivateGuard],
     },
     {
         path: 'create',
@@ -49,7 +49,7 @@ export const ROUTES: Routes = [
     },
     {
         path: 'balkendiagramm',
-        component: BalkendiagrammComponent,
+        // component: BalkendiagrammComponent,
         title: 'Balkendiagramm',
         canMatch: [isAdminGuard],
     },
@@ -60,7 +60,7 @@ export const ROUTES: Routes = [
     },
     {
         path: 'liniendiagramm',
-        component: LiniendiagrammComponent,
+        // component: LiniendiagrammComponent,
         title: 'Liniendiagramm',
         canMatch: [isAdminGuard],
     },
@@ -71,7 +71,7 @@ export const ROUTES: Routes = [
     },
     {
         path: 'tortendiagramm',
-        component: TortendiagrammComponent,
+        // component: TortendiagrammComponent,
         title: 'Tortendiagramm',
         canMatch: [isAdminGuard],
     },
@@ -84,7 +84,7 @@ export const ROUTES: Routes = [
     // id als Pfad-Parameter
     {
         path: 'update/:id',
-        component: UpdateBuchComponent,
+        // component: UpdateBuchComponent,
         canMatch: [isAdminGuard],
     },
     {
@@ -94,6 +94,6 @@ export const ROUTES: Routes = [
     },
     {
         path: ':id',
-        component: DetailsBuchComponent,
+        // component: DetailsBuchComponent,
     },
 ];
