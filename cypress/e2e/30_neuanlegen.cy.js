@@ -30,7 +30,7 @@ const sucheSelektor = `${navSelektor} ul li a[routerLink="${suchePath}"]`;
 const mainSelektor = 'hs-root hs-main';
 const homeSelektor = `${mainSelektor} hs-home`;
 
-const createSelektor = `${mainSelektor} hs-create-buch`;
+const createSelektor = `${mainSelektor} hs-create-kunde`;
 const ratingCreateSelektor = 'hs-create-rating select';
 const verlagCreateSelektor = 'hs-create-verlag select';
 
@@ -50,9 +50,9 @@ describe('Neuanlegen', () => {
         logout();
     });
 
-    it('Neues Buch', () => {
+    it('Neues kunde', () => {
         // Given
-        const titel = 'Neues Buch Cypress';
+        const titel = 'Neues kunde Cypress';
         const rating = 4;
         const verlag = 'Bar Verlag';
         const preis = '999';
@@ -89,7 +89,7 @@ describe('Neuanlegen', () => {
         );
     });
 
-    it('Neues Buch mit fehlerhaften Daten', () => {
+    it('Neues kunde mit fehlerhaften Daten', () => {
         // Given
         const titel = '?!:';
 
@@ -110,7 +110,7 @@ describe('Neuanlegen', () => {
             cy.get(
                 'hs-create-titel div[class="invalid-feedback ng-star-inserted"] span',
             ).contains(
-                'Ein Buchtitel muss mit einem Buchstaben oder einer Ziffer beginnen.',
+                'Ein kundetitel muss mit einem kundestaben oder einer Ziffer beginnen.',
             );
             cy.get(
                 'hs-create-verlag div[class="invalid-feedback ng-star-inserted"] span',

@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { type BuchArt, type Verlag } from '../../shared/buch';
+import { type kundeArt, type Verlag } from '../../shared/kunde';
 import { Component, Output } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Subject } from 'rxjs';
@@ -23,7 +23,7 @@ import { SucheArtComponent } from './suche-art.component';
 import { SucheSchlagwoerterComponent } from './suche-schlagwoerter.component';
 import { SucheTitelComponent } from './suche-titel.component';
 import { SucheVerlagComponent } from './suche-verlag.component';
-import { type Suchkriterien } from '../../shared/buchRead.service';
+import { type Suchkriterien } from '../../shared/kundeRead.service';
 import { fadeIn } from '../../../shared/animations';
 import log from 'loglevel';
 
@@ -58,7 +58,7 @@ export class SuchformularComponent {
 
     #verlag: Verlag | '' = '';
 
-    #art: BuchArt | '' = '';
+    #art: kundeArt | '' = '';
 
     #javascript = false;
 
@@ -82,7 +82,7 @@ export class SuchformularComponent {
 
     setArt(art: string) {
         log.debug('SuchformularComponent.setArt', art);
-        this.#art = art as BuchArt;
+        this.#art = art as kundeArt;
     }
 
     setJavascript(isChecked: boolean) {

@@ -16,7 +16,7 @@
  */
 
 import { Component, Output } from '@angular/core';
-import { type BuchArt } from '../../shared/buch';
+import { type kundeArt } from '../../shared/kunde';
 import { FormsModule } from '@angular/forms';
 import { Subject } from 'rxjs';
 import log from 'loglevel';
@@ -31,10 +31,10 @@ import log from 'loglevel';
     standalone: true,
 })
 export class SucheArtComponent {
-    protected art: BuchArt | '' = '';
+    protected art: kundeArt | '' = '';
 
     @Output()
-    protected readonly art$ = new Subject<BuchArt | ''>();
+    protected readonly art$ = new Subject<kundeArt | ''>();
 
     constructor() {
         log.debug('SucheArtComponent.constructor()');
@@ -44,6 +44,6 @@ export class SucheArtComponent {
         // https://stackoverflow.com/questions/44321326/property-value-does-not-exist-on-type-eventtarget-in-typescript
         const { value } = event.target as HTMLInputElement;
         log.debug(`SucheArtComponent.onChange: art=${value}`);
-        this.art$.next(value as BuchArt | '');
+        this.art$.next(value as kundeArt | '');
     }
 }

@@ -63,10 +63,10 @@ describe('Security', () => {
 
     it('Aendern ohne Login', () => {
         // Given
-        const buchId = '00000000-0000-0000-0000-000000000002';
+        const kundeId = '00000000-0000-0000-0000-000000000002';
 
         // When
-        cy.visit(`${updatePath}/${buchId}`);
+        cy.visit(`${updatePath}/${kundeId}`);
 
         // Then
         cy.contains(`${homeSelektor} h1`, 'Hallo!');

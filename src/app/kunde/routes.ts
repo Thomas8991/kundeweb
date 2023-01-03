@@ -16,18 +16,18 @@
  */
 
 // import { BalkendiagrammComponent } from './diagramme/balkendiagramm.component';
-// import { CreateBuchComponent } from './create-buch/create-buch.component';
-// import { DetailsBuchComponent } from './details-buch/details-buch.component';
+// import { CreatekundeComponent } from './create-kunde/create-kunde.component';
+// import { DetailskundeComponent } from './details-kunde/details-kunde.component';
 import { HomeComponent } from '../home/home.component';
 // import { LiniendiagrammComponent } from './diagramme/liniendiagramm.component';
 import { type Routes } from '@angular/router';
 // import { SucheBuecherComponent } from './suche-buecher/suche-buecher.component';
 // import { TortendiagrammComponent } from './diagramme/tortendiagramm.component';
-// import { UpdateBuchComponent } from './update-buch/update-buch.component';
-// import { canDeactivateGuard } from './create-buch/create-deactivate.guard';
+// import { UpdatekundeComponent } from './update-kunde/update-kunde.component';
+// import { canDeactivateGuard } from './create-kunde/create-deactivate.guard';
 import { isAdminGuard } from '../auth/isAdmin.guard';
 
-// Route-Definitionen fuer das Feature-Modul "buch":
+// Route-Definitionen fuer das Feature-Modul "kunde":
 // Zuordnung von Pfaden und Komponenten mit HTML-Templates
 export const ROUTES: Routes = [
     {
@@ -37,8 +37,8 @@ export const ROUTES: Routes = [
     },
     {
         path: 'create',
-        // component: CreateBuchComponent,
-        title: 'Neues Buch',
+        // component: CreatekundeComponent,
+        title: 'Neues kunde',
         canMatch: [isAdminGuard],
         // canDeactivate: [canDeactivateGuard],
     },
@@ -84,7 +84,7 @@ export const ROUTES: Routes = [
     // id als Pfad-Parameter
     {
         path: 'update/:id',
-        // component: UpdateBuchComponent,
+        // component: UpdatekundeComponent,
         canMatch: [isAdminGuard],
     },
     {
@@ -94,6 +94,6 @@ export const ROUTES: Routes = [
     },
     {
         path: ':id',
-        // component: DetailsBuchComponent,
+        // component: DetailskundeComponent,
     },
 ];

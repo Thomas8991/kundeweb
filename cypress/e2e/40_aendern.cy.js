@@ -28,10 +28,10 @@ const sucheSelektor = `${navSelektor} ul li a[routerLink="${suchePath}"]`;
 const mainSelektor = 'hs-root hs-main';
 const suchformularSelektor = `${mainSelektor} hs-suche-buecher hs-suchformular`;
 const gefundeneBuecherSelektor = `${mainSelektor} hs-suchergebnis hs-gefundene-buecher`;
-const detailsSelektor = `${mainSelektor} hs-details-buch`;
+const detailsSelektor = `${mainSelektor} hs-details-kunde`;
 const bearbeitenSelektor = `${detailsSelektor} hs-details-bearbeiten`;
 
-const updateFormSelektor = `${mainSelektor} hs-update-buch form`;
+const updateFormSelektor = `${mainSelektor} hs-update-kunde form`;
 const updateTitelSelektor = '#titelUpdate';
 const updateArtSelektor = 'hs-update-art select';
 const updateVerlagSelektor = 'hs-update-verlag select';
@@ -53,10 +53,10 @@ describe('Aendern', () => {
         logout();
     });
 
-    it('Aendern des Buchs mit ID "00000000-0000-0000-0000-000000000002"', () => {
+    it('Aendern des kundes mit ID "00000000-0000-0000-0000-000000000002"', () => {
         // Given
         const titel = 'a';
-        const buchId = '00000000-0000-0000-0000-000000000002';
+        const kundeId = '00000000-0000-0000-0000-000000000002';
         const neuerTitel = 'Beta Cypress';
         const neueArt = 'Druckausgabe';
         const neuerVerlag = 'Foo Verlag';
@@ -67,7 +67,7 @@ describe('Aendern', () => {
             cy.get('button').click();
         });
         cy.get(`${gefundeneBuecherSelektor} tr td:nth-child(2)`)
-            .contains(buchId)
+            .contains(kundeId)
             .click();
 
         // When
@@ -89,6 +89,6 @@ describe('Aendern', () => {
             cy.get(detailsVerlagSelektor).should('have.text', neuerVerlag);
         });
 
-        cy.log(`Aendern von ${buchId}: erfolgreich`);
+        cy.log(`Aendern von ${kundeId}: erfolgreich`);
     });
 });

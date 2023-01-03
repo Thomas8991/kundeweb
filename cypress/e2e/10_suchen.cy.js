@@ -28,7 +28,7 @@ const suchformularSelektor = `${mainSelektor} hs-suche-buecher hs-suchformular`;
 const suchergebnisSelektor = `${mainSelektor} hs-suchergebnis`;
 const gefundeneBuecherSelektor = `${suchergebnisSelektor} hs-gefundene-buecher`;
 const errorSucheSelektor = `${suchergebnisSelektor} hs-error-message div span`;
-const detailsSelektor = `${mainSelektor} hs-details-buch`;
+const detailsSelektor = `${mainSelektor} hs-details-kunde`;
 
 /* global Cypress, cy, describe, it, beforeEach, expect */
 
@@ -145,9 +145,9 @@ describe('Suchen', () => {
         cy.log(`Suchen mit nicht-vorhandenem Titel "${titel}": erfolgreich`);
     });
 
-    it('Details zu Buch "00000000-0000-0000-0000-000000000001"', () => {
+    it('Details zu kunde "00000000-0000-0000-0000-000000000001"', () => {
         // Given
-        const buchId = '00000000-0000-0000-0000-000000000001';
+        const kundeId = '00000000-0000-0000-0000-000000000001';
 
         // When
         cy.get(sucheSelektor).click();
@@ -155,12 +155,12 @@ describe('Suchen', () => {
             cy.get('button').click();
         });
         cy.get(`${gefundeneBuecherSelektor} tr td:nth-child(2)`)
-            .contains(buchId)
+            .contains(kundeId)
             .click();
 
         // Then
-        cy.get(`${detailsSelektor} h4`).should('have.text', `Buch ${buchId}:`);
-        cy.log(`Details zu ${buchId}: erfolgreich`);
+        cy.get(`${detailsSelektor} h4`).should('have.text', `kunde ${kundeId}:`);
+        cy.log(`Details zu ${kundeId}: erfolgreich`);
     });
 
     it('Details mit "Druckausgabe"', () => {
