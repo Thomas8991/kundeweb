@@ -21,8 +21,10 @@ import {
     getRoles,
 } from './storage.service';
 import { first, tap } from 'rxjs/operators';
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import { BasicAuthService } from './basic-auth.service';
 import { Injectable } from '@angular/core';
-import { JwtService } from './jwt.service'; // eslint-disable-line @typescript-eslint/consistent-type-imports
+// import { JwtService } from './jwt.service'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import { Subject } from 'rxjs';
 import log from 'loglevel';
 
@@ -40,7 +42,7 @@ export class AuthService {
     // public fuer z.B. nav.component mit der Property isAdmin
     readonly rollen$ = new Subject<string[]>();
 
-    constructor(private readonly jwtService: JwtService) {
+    constructor(private readonly basicAuthService: BasicAuthService) {
         // OnInit ist nur bei @Component moeglich
         if (this.isLoggedIn) {
             log.debug('AuthService.constructor: bereits eingeloggt');
@@ -69,7 +71,7 @@ export class AuthService {
             `AuthService.login: username=${username}, password=${password}`,
         );
 
-        this.jwtService
+        this.basicAuthService
             .login(username, password)
             .pipe(
                 // den 1. Datensatz empfangen und danach implizites "unsubscribe"
