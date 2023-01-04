@@ -1,0 +1,34 @@
+<div class="row">
+  <label for="nachnameInput" class="col col-2 col-form-label gy-3">
+    Nachname *
+  </label>
+  <div class="col col-10 gy-3" [formGroup]="createForm">
+    <div class="input-group">
+      <input
+        id="nachnameInput"
+        placeholder="Nachname"
+        class="form-control"
+        autofocus
+        formControlName="nachname"
+        [class.is-invalid]="nachname.invalid && nachname.touched"
+        [class.is-valid]="nachname.valid && nachname.touched"
+      />
+
+      <div
+        class="invalid-feedback"
+        *ngIf="nachname.invalid && nachname.touched && nachname.errors"
+      >
+        <i class="material-icons">error</i>
+        <span class="ms-1" *ngIf="nachname.errors['required']">
+          Ein Nachname muss eingegeben werden.
+        </span>
+        <span class="ms-1" *ngIf="nachname.errors['minlength']">
+          Ein Nachname muss mindestens 2 Zeichen lang sein.
+        </span>
+        <span class="ms-1" *ngIf="nachname.errors['pattern']">
+          Ein Nachname muss mit einem großen Buchstaben beginnen.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
