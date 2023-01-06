@@ -1,0 +1,11 @@
+<div class="row mt-2">
+  <label class="col col-1"> Geschlecht </label>
+  <div class="col col-11">
+    <span [ngSwitch]="geschlecht">
+      <span *ngSwitchCase="'MAENNLICH'">M</span>
+      <span *ngSwitchCase="'WEIBLICH'">W</span>
+      <span *ngSwitchCase="'DIVERS'">D</span>
+      <span *ngSwitchDefault>unbekannt</span>
+    </span>
+  </div>
+</div>
