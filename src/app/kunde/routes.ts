@@ -16,11 +16,12 @@
  */
 
 // import { BalkendiagrammComponent } from './diagramme/balkendiagramm.component';
-// import { CreatekundeComponent } from './create-kunde/create-kunde.component';
-// import { DetailskundeComponent } from './details-kunde/details-kunde.component';
+import { CreateKundeComponent } from './create-kunde/create-kunde.component';
 import { HomeComponent } from '../home/home.component';
-// import { LiniendiagrammComponent } from './diagramme/liniendiagramm.component';
 import { type Routes } from '@angular/router';
+import { canDeactivateGuard } from './create-kunde/create-deactivate.guard';
+// import { DetailskundeComponent } from './details-kunde/details-kunde.component';
+// import { LiniendiagrammComponent } from './diagramme/liniendiagramm.component';
 // import { SucheBuecherComponent } from './suche-buecher/suche-buecher.component';
 // import { TortendiagrammComponent } from './diagramme/tortendiagramm.component';
 // import { UpdatekundeComponent } from './update-kunde/update-kunde.component';
@@ -37,10 +38,10 @@ export const ROUTES: Routes = [
     },
     {
         path: 'create',
-        // component: CreatekundeComponent,
+        component: CreateKundeComponent,
         title: 'Neues kunde',
         canMatch: [isAdminGuard],
-        // canDeactivate: [canDeactivateGuard],
+        canDeactivate: [canDeactivateGuard],
     },
     {
         path: 'create',

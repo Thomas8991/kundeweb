@@ -1,12 +1,25 @@
-import { type KundeForm, toKunde } from './kundeForm';
-import { KundeWriteService, SaveError } from '../shared'; // eslint-disable-line @typescript-eslint/consistent-type-imports
-// eslint-disable-next-line sort-imports
-import { Component, type OnInit } from '@angular/core';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
+import { type KundeForm, toKunde } from './kundeForm';
 import { first, tap } from 'rxjs/operators';
-import { FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
+import { CreateAdresseComponent } from './create-adresse.component';
+import { CreateEmailComponent } from './create-email.component';
+import { CreateFamilienstandComponent } from './create-familienstand.component';
+import { CreateGeburtsdatumModule } from './create-geburtsdatum.module';
+import { CreateGeschlechtComponent } from './create-geschlecht.component';
+import { CreateHomepageComponent } from './create-homepage.component';
+import { CreateInteressenComponent } from './create-interessen.component';
+import { CreateKategorieComponent } from './create-kategorie.component';
+import { CreateNachnameComponent } from './create-nachname.component';
+import { CreateNewsletterComponent } from './create-newsletter.component';
+import { CreateUmsatzComponent } from './create-umsatz.component';
+import { ErrorMessageComponent } from '../../shared/error-message.component';
+import { KundeWriteService } from '../shared/kundeWrite.service'; // eslint-disable-line @typescript-eslint/consistent-type-imports
+import { NgIf } from '@angular/common';
 import { Router } from '@angular/router'; // eslint-disable-line @typescript-eslint/consistent-type-imports
-import { Title } from '@angular/platform-browser'; // eslint-disable-line @typescript-eslint/consistent-type-imports
+import { SaveError } from '../shared/errors';
+// import { Title } from '@angular/platform-browser'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import log from 'loglevel';
 
 /**
@@ -16,20 +29,36 @@ import log from 'loglevel';
 @Component({
     selector: 'hs-create-kunde',
     templateUrl: './create-kunde.component.html',
+    imports: [
+        CreateAdresseComponent,
+        CreateEmailComponent,
+        CreateFamilienstandComponent,
+        CreateGeburtsdatumModule,
+        CreateGeschlechtComponent,
+        CreateHomepageComponent,
+        CreateInteressenComponent,
+        CreateKategorieComponent,
+        CreateNachnameComponent,
+        CreateNewsletterComponent,
+        CreateUmsatzComponent,
+        ErrorMessageComponent,
+        NgIf,
+        ReactiveFormsModule,
+    ],
+    standalone: true,
 })
-export class CreateKundeComponent implements OnInit {
+export class CreateKundeComponent {
     readonly createForm = new FormGroup({});
 
     showWarning = false;
 
     fertig = false;
 
-    errorMsg: string | undefined = undefined;
+    protected errorMsg: string | undefined = undefined;
 
     constructor(
         private readonly service: KundeWriteService,
         private readonly router: Router,
-        private readonly titleService: Title,
     ) {
         log.debug(
             'CreateKuneComponent.constructor: Injizierter Router:',
@@ -37,9 +66,9 @@ export class CreateKundeComponent implements OnInit {
         );
     }
 
-    ngOnInit() {
-        this.titleService.setTitle('Neuer Kunde');
-    }
+    // ngOnInit() {
+    //     this.titleService.setTitle('Neuer Kunde');
+    // }
 
     /**
      * Die Methode <code>onSubmit</code> realisiert den Event-Handler, wenn das
@@ -111,19 +140,20 @@ export class CreateKundeComponent implements OnInit {
                 break;
             }
 
-            case HttpStatusCode.TooManyRequests:
+            case HttpStatusCode.TooManyRequests: {
                 this.errorMsg =
                     'Zu viele Anfragen. Bitte versuchen Sie es später noch einmal.';
                 break;
-
-            case HttpStatusCode.GatewayTimeout:
+            }
+            case HttpStatusCode.GatewayTimeout: {
                 this.errorMsg = 'Ein interner Fehler ist aufgetreten.';
                 log.error('Laeuft der Appserver? Port-Forwarding?');
                 break;
-
-            default:
+            }
+            default: {
                 this.errorMsg = 'Ein unbekannter Fehler ist aufgetreten.';
                 break;
+            }
         }
     }
 
