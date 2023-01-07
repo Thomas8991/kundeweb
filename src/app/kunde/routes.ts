@@ -21,9 +21,9 @@ import { BalkendiagrammComponent } from './diagramme/balkendiagramm.component';
 import { HomeComponent } from '../home/home.component';
 import { LiniendiagrammComponent } from './diagramme/liniendiagramm.component';
 import { type Routes } from '@angular/router';
-// import { SucheBuecherComponent } from './suche-buecher/suche-buecher.component';
+import { SucheKundenComponent } from './suche-kunden/suche-kunden.component';
 import { TortendiagrammComponent } from './diagramme/tortendiagramm.component';
-// import { UpdatekundeComponent } from './update-kunde/update-kunde.component';
+import { UpdateKundeComponent } from './update-kunde/update-kunde.component';
 // import { canDeactivateGuard } from './create-kunde/create-deactivate.guard';
 import { isAdminGuard } from '../auth/isAdmin.guard';
 
@@ -32,7 +32,7 @@ import { isAdminGuard } from '../auth/isAdmin.guard';
 export const ROUTES: Routes = [
     {
         path: 'suche',
-        // component: SucheBuecherComponent,
+        component: SucheKundenComponent,
         title: 'Suche',
     },
     {
@@ -84,7 +84,7 @@ export const ROUTES: Routes = [
     // id als Pfad-Parameter
     {
         path: 'update/:id',
-        // component: UpdatekundeComponent,
+        component: UpdateKundeComponent,
         canMatch: [isAdminGuard],
     },
     {

@@ -1,0 +1,31 @@
+<div class="row">
+  <label for="emailUpdate" class="col col-2 col-form-label gy-3"> Email </label>
+
+  <div class="col col-10 gy-3" [formGroup]="form">
+    <div class="input-group">
+      <input
+        id="emailUpdate"
+        placeholder="Email"
+        class="form-control"
+        autofocus
+        formControlName="email"
+        [class.is-invalid]="email.invalid && email.dirty"
+        [class.is-valid]="email.valid && email.dirty"
+      />
+
+      <div
+        class="invalid-feedback"
+        *ngIf="email.invalid && email.touched && email.errors"
+      >
+        <i class="material-icons">error</i>
+        <span
+          class="ms-1"
+          *ngIf="email.errors['required'] || email.errors['pattern']"
+        >
+          Eine g&uuml;ltige Email-Adresse, z.B. beispiel@besipiel.de, muss
+          eingegeben werden.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

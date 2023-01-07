@@ -22,12 +22,6 @@ import { KundeWriteService } from '../../shared/kundeWrite.service';
 import { RemoveError } from '../../shared/errors';
 import { Subject } from 'rxjs';
 import log from 'loglevel';
-
-/**
- * Komponente f&uuml;r den CSS-Selektor <code>hs-gefundene-buecher</code>, um zun&auml;chst
- * das Warten und danach das Ergebnis der Suche anzuzeigen, d.h. die gefundenen
- * B&uuml;cher oder eine Fehlermeldung.
- */
 @Component({
     selector: 'hs-gefundene-kunden',
     templateUrl: './gefundene-kunden.component.html',
@@ -46,11 +40,6 @@ import log from 'loglevel';
     standalone: true,
 })
 export class GefundeneKundenComponent implements OnInit {
-    // Im ganzen Beispiel: lokale Speicherung des Zustands und nicht durch z.B.
-    // eine Flux-Bibliothek wie beispielsweise Redux http://redux.js.org
-
-    // Property Binding: <hs-gefundene-buecher [buecher]="...">
-    // Decorator fuer ein Attribut. Siehe InputMetadata
     @Input()
     kunden: Kunde[] = [];
 
