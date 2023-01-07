@@ -1,5 +1,5 @@
-import type { InteresseType, KundeSharedWrite } from '../shared/kunde';
-
+import type { InteresseType } from '../shared/kunde';
+import { type KundeSharedWrite } from '../shared/kunde';
 import { type Kunde } from '../shared';
 import { Temporal } from '@js-temporal/polyfill';
 import log from 'loglevel';
@@ -65,6 +65,7 @@ export const toKunde = (kundeForm: KundeForm) => {
     }
 
     const kunde: Kunde = {
+        id: undefined,
         nachname,
         email,
         kategorie: Number(kategorie),

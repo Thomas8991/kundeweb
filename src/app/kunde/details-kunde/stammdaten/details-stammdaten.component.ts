@@ -7,7 +7,7 @@ import { DetailsHomepageComponent } from './details-homepage.component';
 import { DetailsNachnameComponent } from './details-nachname.component';
 import { DetailsNewsletterComponent } from './details-newsletter.component';
 import { DetailsUmsatzComponent } from './details-umsatz.component';
-import { type Kunde } from '../../shared/kunde';
+import { type Kunde } from '../../shared';
 import { NgIf } from '@angular/common';
 import log from 'loglevel';
 

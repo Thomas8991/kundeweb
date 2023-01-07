@@ -14,7 +14,7 @@ export type GeschlechtType = 'D' | 'M' | 'W';
  * Functions fuer Abfragen und Aenderungen.
  */
 export interface Kunde {
-    id: string;
+    id: string | undefined;
     version: number | undefined;
     nachname: string;
     email: string;

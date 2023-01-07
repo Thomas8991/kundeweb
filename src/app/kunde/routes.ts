@@ -16,14 +16,16 @@
  */
 
 import { BalkendiagrammComponent } from './diagramme/balkendiagramm.component';
-// import { CreatekundeComponent } from './create-kunde/create-kunde.component';
-// import { DetailskundeComponent } from './details-kunde/details-kunde.component';
+import { CreateKundeComponent } from './create-kunde/create-kunde.component';
 import { HomeComponent } from '../home/home.component';
 import { LiniendiagrammComponent } from './diagramme/liniendiagramm.component';
-import { type Routes } from '@angular/router';
-import { SucheKundenComponent } from './suche-kunden/suche-kunden.component';
-import { TortendiagrammComponent } from './diagramme/tortendiagramm.component';
 import { UpdateKundeComponent } from './update-kunde/update-kunde.component';
+// eslint-disable-next-line sort-imports
+import { type Routes } from '@angular/router';
+import { TortendiagrammComponent } from './diagramme/tortendiagramm.component';
+import { canDeactivateGuard } from './create-kunde/create-deactivate.guard';
+// import { DetailskundeComponent } from './details-kunde/details-kunde.component';
+// import { SucheBuecherComponent } from './suche-buecher/suche-buecher.component';
 // import { canDeactivateGuard } from './create-kunde/create-deactivate.guard';
 import { isAdminGuard } from '../auth/isAdmin.guard';
 
@@ -32,15 +34,15 @@ import { isAdminGuard } from '../auth/isAdmin.guard';
 export const ROUTES: Routes = [
     {
         path: 'suche',
-        component: SucheKundenComponent,
+        // component: SucheKundenComponent,
         title: 'Suche',
     },
     {
         path: 'create',
-        // component: CreatekundeComponent,
+        component: CreateKundeComponent,
         title: 'Neues kunde',
         canMatch: [isAdminGuard],
-        // canDeactivate: [canDeactivateGuard],
+        canDeactivate: [canDeactivateGuard],
     },
     {
         path: 'create',
