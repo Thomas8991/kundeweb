@@ -49,8 +49,8 @@ export class NavComponent implements OnInit {
     }
 
     ngOnInit() {
-        if (true) {
-        // if (this.authService.isAdmin) {              BACKDOOR
+        // if (true) {  // BACKDOOR
+        if (this.authService.isAdmin) {
             log.debug('NavComponent.ngOnInit: bereits als admin eingeloggt');
             this.isAdmin$.next(true);
         }

@@ -25,12 +25,12 @@ export const ROUTES: Routes = [
         path: 'create',
         component: CreateKundeComponent,
         title: 'Neuer Kunde',
-        // canMatch: [isAdminGuard],
+        canMatch: [isAdminGuard],
         canDeactivate: [canDeactivateGuard],
     },
     // {
-    //     path: 'create',
-    //     component: HomeComponent,
+    //    path: 'create',
+    //    component: HomeComponent,
     //    title: 'Beispiel',
     // },
 
