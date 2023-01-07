@@ -1,21 +1,4 @@
 <!--
-    Copyright (C) 2015 - present Juergen Zimmermann, Hochschule Karlsruhe
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
--->
-
-<!--
   Unternehmensweite Apps benoetigen:
     Tabellen
     Formulare ("form")
@@ -62,15 +45,8 @@
 
     <!-- Ereignis "submit" durch Abschicken des Formulars -->
     <form (submit)="onSubmit()" role="form">
-      <hs-suche-titel (titel$)="setTitel($event)"></hs-suche-titel>
-      <hs-suche-verlag (verlag$)="setVerlag($event)"></hs-suche-verlag>
-      <hs-suche-art (art$)="setArt($event)"></hs-suche-art>
-      <hs-suche-schlagwoerter
-        (javascript$)="setJavascript($event)"
-        (typescript$)="setTypescript($event)"
-      >
-      </hs-suche-schlagwoerter>
-
+      <hs-suche-nachname (nachname$)="setNachname($event)"></hs-suche-nachname>
+      <hs-suche-email (email$)="setEmail($event)"></hs-suche-email>
       <!-- vertikale und horizontale "Gutter" als Abstaende ("gaps") zwischen den Spalten -->
       <!-- https://v5.getbootstrap.com/docs/5.1/layout/gutters/#horizontal-gutters -->
       <div class="row">
@@ -78,7 +54,7 @@
           <i class="material-icons">info</i>
           <!-- margin left -->
           <span class="ms-1">
-            Hinweis: Keine Eingabe liefert alle B&uuml;cher
+            Hinweis: Keine Eingabe liefert alle Kunden
           </span>
         </div>
       </div>

@@ -1,28 +1,9 @@
-/*
- * Copyright (C) 2015 - present Juergen Zimmermann, Hochschule Karlsruhe
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy oSf the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-import { type kundeArt, type Verlag } from '../../shared/kunde';
 import { Component, Output } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { SucheArtComponent } from './suche-art.component';
-import { SucheSchlagwoerterComponent } from './suche-schlagwoerter.component';
-import { SucheTitelComponent } from './suche-titel.component';
-import { SucheVerlagComponent } from './suche-verlag.component';
+import { SucheNachnameComponent } from './suche-nachname.component';
+// eslint-disable-next-line sort-imports
+import { SucheEmailComponent } from './suche-email.component';
 import { type Suchkriterien } from '../../shared/kundeRead.service';
 import { fadeIn } from '../../../shared/animations';
 import log from 'loglevel';
@@ -37,10 +18,8 @@ import log from 'loglevel';
     imports: [
         FormsModule,
         ReactiveFormsModule,
-        SucheArtComponent,
-        SucheSchlagwoerterComponent,
-        SucheTitelComponent,
-        SucheVerlagComponent,
+        SucheNachnameComponent,
+        SucheEmailComponent,
     ],
     standalone: true,
 })
@@ -54,15 +33,9 @@ export class SuchformularComponent {
     @Output()
     protected readonly suchkriterien$ = new Subject<Suchkriterien>();
 
-    #titel = '';
+    #nachname = '';
 
-    #verlag: Verlag | '' = '';
-
-    #art: kundeArt | '' = '';
-
-    #javascript = false;
-
-    #typescript = false;
+    #email = '';
 
     // DI: Constructor Injection (React hat uebrigens keine DI)
     // Empfehlung: Konstruktor nur fuer DI
@@ -70,29 +43,14 @@ export class SuchformularComponent {
         log.debug('SuchformularComponent.constructor()');
     }
 
-    setTitel(titel: string) {
-        log.debug('SuchformularComponent.setTitel', titel);
-        this.#titel = titel;
+    setNachname(nachname: string) {
+        log.debug('SuchformularComponent.setNachname', nachname);
+        this.#nachname = nachname;
     }
 
-    setVerlag(verlag: Verlag | '') {
-        log.debug('SuchformularComponent.setVerlag', verlag);
-        this.#verlag = verlag;
-    }
-
-    setArt(art: string) {
-        log.debug('SuchformularComponent.setArt', art);
-        this.#art = art as kundeArt;
-    }
-
-    setJavascript(isChecked: boolean) {
-        log.debug('SuchformularComponent.setJavascript', isChecked);
-        this.#javascript = isChecked;
-    }
-
-    setTypescript(isChecked: boolean) {
-        log.debug('SuchformularComponent.setTypescript', isChecked);
-        this.#typescript = isChecked;
+    setEmail(email: string) {
+        log.debug('SuchformularComponent.setEmail', email);
+        this.#email = email;
     }
 
     /**
@@ -100,22 +58,14 @@ export class SuchformularComponent {
      */
     onSubmit() {
         log.debug(
-            'SuchformularComponent.onSubmit: titel / verlag / art / javascript / typescript',
-            this.#titel,
-            this.#verlag,
-            this.#art,
-            this.#javascript,
-            this.#typescript,
+            'SuchformularComponent.onSubmit: nachname / email',
+            this.#nachname,
+            this.#email,
         );
 
         this.suchkriterien$.next({
-            titel: this.#titel,
-            verlag: this.#verlag,
-            art: this.#art,
-            schlagwoerter: {
-                javascript: this.#javascript,
-                typescript: this.#typescript,
-            },
+            nachname: this.#nachname,
+            email: this.#email,
         });
     }
 }
