@@ -17,11 +17,14 @@ import log from 'loglevel';
     standalone: true,
 })
 export class SuchergebnisComponent {
+<<<<<<< HEAD
     // Im ganzen Beispiel: lokale Speicherung des Zustands und nicht durch z.B.
     // eine Flux-Bibliothek wie beispielsweise Redux http://redux.js.org
 
     // Property Binding: <hs-suchergebnis [kunden]="...">
     // Decorator fuer ein Attribut. Siehe InputMetadata
+=======
+>>>>>>> ba71335d0fc9474bf1697ffc702063c8536a4397
     @Input()
     kunden: Kunde[] = [];
 

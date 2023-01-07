@@ -1,31 +1,18 @@
-/*
- * Copyright (C) 2016 - present Juergen Zimmermann, Hochschule Karlsruhe
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 import { BalkendiagrammComponent } from './diagramme/balkendiagramm.component';
 import { CreateKundeComponent } from './create-kunde/create-kunde.component';
 import { DetailsKundeComponent } from './details-kunde/details-kunde.component';
 import { HomeComponent } from '../home/home.component';
 import { LiniendiagrammComponent } from './diagramme/liniendiagramm.component';
+import { UpdateKundeComponent } from './update-kunde/update-kunde.component';
+// eslint-disable-next-line sort-imports
 import { type Routes } from '@angular/router';
 import { SucheKundenComponent } from './suche-kunden/suche-kunden.component';
 import { TortendiagrammComponent } from './diagramme/tortendiagramm.component';
 import { canDeactivateGuard } from './create-kunde/create-deactivate.guard';
 
 // import { UpdatekundeComponent } from './update-kunde/update-kunde.component';
+// import { DetailskundeComponent } from './details-kunde/details-kunde.component';
+// import { SucheBuecherComponent } from './suche-buecher/suche-buecher.component';
 // import { canDeactivateGuard } from './create-kunde/create-deactivate.guard';
 import { isAdminGuard } from '../auth/isAdmin.guard';
 
@@ -84,16 +71,16 @@ export const ROUTES: Routes = [
     },
 
     // id als Pfad-Parameter
-    /* {
+    {
         path: 'update/:id',
-        // component: UpdatekundeComponent,
+        component: UpdateKundeComponent,
         canMatch: [isAdminGuard],
     },
     {
         path: 'update/:id',
         component: HomeComponent,
         title: 'Beispiel',
-    }, */
+    },
     {
         path: ':id',
         component: DetailsKundeComponent,
