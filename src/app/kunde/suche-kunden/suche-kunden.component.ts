@@ -14,19 +14,6 @@ import { SuchergebnisComponent } from './suchergebnis/suchergebnis.component';
 import { SuchformularComponent } from './suchformular/suchformular.component';
 import { WaitingComponent } from './../../shared/waiting.component';
 import log from 'loglevel';
-<<<<<<< HEAD
-
-/**
- * Komponente f&uuml;r den CSS-Selektor <code>&lt;hs-suche-kunden&gt;</code>,
- * die aus den Kindkomponenten f&uuml;r diese CSS-Selektoren besteht:
- * <ul>
- *  <li> <code>hs-suchformular</code>
- *  <li> <code>hs-waiting</code>
- *  <li> <code>hs-suchergebnis</code>
- * </ul>
- */
-=======
->>>>>>> ba71335d0fc9474bf1697ffc702063c8536a4397
 @Component({
     selector: 'hs-suche-kunden',
     templateUrl: './suche-kunden.component.html',
