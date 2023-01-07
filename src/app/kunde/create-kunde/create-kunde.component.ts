@@ -72,7 +72,7 @@ export class CreateKundeComponent {
 
     /**
      * Die Methode <code>onSubmit</code> realisiert den Event-Handler, wenn das
-     * Formular abgeschickt wird, um ein neues Buch anzulegen.
+     * Formular abgeschickt wird, um ein neues Kunde anzulegen.
      * @return false, um das durch den Button-Klick ausgel&ouml;ste Ereignis
      *         zu konsumieren.
      */

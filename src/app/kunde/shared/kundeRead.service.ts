@@ -103,7 +103,7 @@ export class KundeReadService {
                             of(this.#buildFindError(err as HttpErrorResponse)),
                     ),
 
-                    // entweder Observable<BuecherServer> oder Observable<FindError>
+                    // entweder Observable<KundenServer> oder Observable<FindError>
                     map(restResult => this.#toKundeArrayOrError(restResult)),
                 )
         );
@@ -166,7 +166,7 @@ export class KundeReadService {
                         return of(this.#buildFindError(errResponse));
                     }),
 
-                    // entweder Observable<HttpResponse<BuchServer>> oder Observable<FindError>
+                    // entweder Observable<HttpResponse<KundeServer>> oder Observable<FindError>
                     map(restResult => this.#toKundeOrError(restResult)),
                 )
         );

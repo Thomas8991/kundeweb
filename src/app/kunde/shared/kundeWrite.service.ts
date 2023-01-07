@@ -148,7 +148,7 @@ export class KundeWriteService {
         /* eslint-enable @typescript-eslint/naming-convention */
         log.debug('KundeWriteService.update: headers=', headers);
 
-        log.debug('KundeWriteService.update: buchDTO=', kundeDTO);
+        log.debug('KundeWriteService.update: kundeDTO=', kundeDTO);
         return this.httpClient
             .put(url, kundeDTO, { headers, observe: 'response' })
             .pipe(

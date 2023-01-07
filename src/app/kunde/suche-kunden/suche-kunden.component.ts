@@ -16,7 +16,7 @@ import { WaitingComponent } from './../../shared/waiting.component';
 import log from 'loglevel';
 
 /**
- * Komponente f&uuml;r den CSS-Selektor <code>&lt;hs-suche-buecher&gt;</code>,
+ * Komponente f&uuml;r den CSS-Selektor <code>&lt;hs-suche-kunden&gt;</code>,
  * die aus den Kindkomponenten f&uuml;r diese CSS-Selektoren besteht:
  * <ul>
  *  <li> <code>hs-suchformular</code>

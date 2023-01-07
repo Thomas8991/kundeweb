@@ -30,11 +30,11 @@ export interface Kunde {
 }
 
 /**
- * Gemeinsame Datenfelder unabh&auml;ngig, ob die Buchdaten von einem Server
+ * Gemeinsame Datenfelder unabh&auml;ngig, ob die Kundedaten von einem Server
  * (z.B. RESTful Web Service) oder von einem Formular kommen.
  * Verwendung in den Interfaces:
- * - BuchServer für BuchReadService
- * - BuchForm für CreateBuchComponent
+ * - KundeServer für KundeReadService
+ * - KundeForm für CreateKundeComponent
  */
 export interface KundeShared {
     nachname: string;

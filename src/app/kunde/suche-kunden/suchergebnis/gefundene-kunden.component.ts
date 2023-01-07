@@ -24,7 +24,7 @@ import { Subject } from 'rxjs';
 import log from 'loglevel';
 
 /**
- * Komponente f&uuml;r den CSS-Selektor <code>hs-gefundene-buecher</code>, um zun&auml;chst
+ * Komponente f&uuml;r den CSS-Selektor <code>hs-gefundene-kunden</code>, um zun&auml;chst
  * das Warten und danach das Ergebnis der Suche anzuzeigen, d.h. die gefundenen
  * B&uuml;cher oder eine Fehlermeldung.
  */
@@ -49,7 +49,7 @@ export class GefundeneKundenComponent implements OnInit {
     // Im ganzen Beispiel: lokale Speicherung des Zustands und nicht durch z.B.
     // eine Flux-Bibliothek wie beispielsweise Redux http://redux.js.org
 
-    // Property Binding: <hs-gefundene-buecher [buecher]="...">
+    // Property Binding: <hs-gefundene-kunden [kunden]="...">
     // Decorator fuer ein Attribut. Siehe InputMetadata
     @Input()
     kunden: Kunde[] = [];
@@ -92,14 +92,14 @@ export class GefundeneKundenComponent implements OnInit {
     }
 
     /**
-     * Das ausgew&auml;hlte bzw. angeklickte Buch in der Detailsseite anzeigen.
+     * Das ausgew&auml;hlte bzw. angeklickte Kunde in der Detailsseite anzeigen.
      * @param kunde Der ausgew&auml;hlte Kunde
      */
     onClick(kunde: Kunde) {
         log.debug('GefundeneKundenComponent.onClick: kunde=', kunde);
 
-        // URL mit der Buch-ID, um ein Bookmark zu ermoeglichen
-        // Gefundenes Buch als NavigationExtras im Router puffern
+        // URL mit der Kunde-ID, um ein Bookmark zu ermoeglichen
+        // Gefundenes Kunde als NavigationExtras im Router puffern
         const state = { kunde };
         return this.router.navigate([`/kunden/${kunde.id}`], { state });
     }

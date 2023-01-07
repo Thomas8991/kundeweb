@@ -17,7 +17,7 @@ import log from 'loglevel';
     standalone: true,
 })
 export class DetailsInteressenComponent implements OnInit {
-    // <hs-interessen [values]="buch.interessen">
+    // <hs-interessen [values]="kunde.interessen">
     // Decorator fuer ein Attribut. Siehe InputMetadata
     @Input()
     values!: string[];

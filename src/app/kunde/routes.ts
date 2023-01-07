@@ -17,13 +17,14 @@
 
 import { BalkendiagrammComponent } from './diagramme/balkendiagramm.component';
 import { CreateKundeComponent } from './create-kunde/create-kunde.component';
+import { DetailsKundeComponent } from './details-kunde/details-kunde.component';
 import { HomeComponent } from '../home/home.component';
+import { LiniendiagrammComponent } from './diagramme/liniendiagramm.component';
 import { type Routes } from '@angular/router';
+import { SucheKundenComponent } from './suche-kunden/suche-kunden.component';
 import { TortendiagrammComponent } from './diagramme/tortendiagramm.component';
 import { canDeactivateGuard } from './create-kunde/create-deactivate.guard';
-// import { DetailskundeComponent } from './details-kunde/details-kunde.component';
-// import { LiniendiagrammComponent } from './diagramme/liniendiagramm.component';
-// import { SucheBuecherComponent } from './suche-buecher/suche-buecher.component';
+
 // import { UpdatekundeComponent } from './update-kunde/update-kunde.component';
 // import { canDeactivateGuard } from './create-kunde/create-deactivate.guard';
 import { isAdminGuard } from '../auth/isAdmin.guard';
@@ -33,21 +34,21 @@ import { isAdminGuard } from '../auth/isAdmin.guard';
 export const ROUTES: Routes = [
     {
         path: 'suche',
-        // component: SucheBuecherComponent,
+        component: SucheKundenComponent,
         title: 'Suche',
     },
     {
         path: 'create',
         component: CreateKundeComponent,
-        title: 'Neues kunde',
-        canMatch: [isAdminGuard],
+        title: 'Neuer Kunde',
+        // canMatch: [isAdminGuard],
         canDeactivate: [canDeactivateGuard],
     },
-    {
-        path: 'create',
-        component: HomeComponent,
-        title: 'Beispiel',
-    },
+    // {
+    //     path: 'create',
+    //     component: HomeComponent,
+    //    title: 'Beispiel',
+    // },
     {
         path: 'balkendiagramm',
         component: BalkendiagrammComponent,
@@ -83,7 +84,7 @@ export const ROUTES: Routes = [
     },
 
     // id als Pfad-Parameter
-    {
+    /* {
         path: 'update/:id',
         // component: UpdatekundeComponent,
         canMatch: [isAdminGuard],
@@ -92,9 +93,9 @@ export const ROUTES: Routes = [
         path: 'update/:id',
         component: HomeComponent,
         title: 'Beispiel',
-    },
+    }, */
     {
         path: ':id',
-        // component: DetailskundeComponent,
+        component: DetailsKundeComponent,
     },
 ];

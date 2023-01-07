@@ -31,7 +31,7 @@ import log from 'loglevel';
     standalone: true,
 })
 export class DetailsStammdatenComponent implements OnInit {
-    // Property Binding: <hs-details-stammdaten [buch]="...">
+    // Property Binding: <hs-details-stammdaten [kunde]="...">
     // Decorator fuer ein Attribut. Siehe InputMetadata
     @Input()
     kunde!: Kunde;
