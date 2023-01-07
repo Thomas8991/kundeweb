@@ -15,14 +15,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// import { BalkendiagrammComponent } from './diagramme/balkendiagramm.component';
+import { BalkendiagrammComponent } from './diagramme/balkendiagramm.component';
 // import { CreatekundeComponent } from './create-kunde/create-kunde.component';
 // import { DetailskundeComponent } from './details-kunde/details-kunde.component';
 import { HomeComponent } from '../home/home.component';
-// import { LiniendiagrammComponent } from './diagramme/liniendiagramm.component';
+import { LiniendiagrammComponent } from './diagramme/liniendiagramm.component';
 import { type Routes } from '@angular/router';
 // import { SucheBuecherComponent } from './suche-buecher/suche-buecher.component';
-// import { TortendiagrammComponent } from './diagramme/tortendiagramm.component';
+import { TortendiagrammComponent } from './diagramme/tortendiagramm.component';
 // import { UpdatekundeComponent } from './update-kunde/update-kunde.component';
 // import { canDeactivateGuard } from './create-kunde/create-deactivate.guard';
 import { isAdminGuard } from '../auth/isAdmin.guard';
@@ -49,7 +49,7 @@ export const ROUTES: Routes = [
     },
     {
         path: 'balkendiagramm',
-        // component: BalkendiagrammComponent,
+        component: BalkendiagrammComponent,
         title: 'Balkendiagramm',
         canMatch: [isAdminGuard],
     },
@@ -60,7 +60,7 @@ export const ROUTES: Routes = [
     },
     {
         path: 'liniendiagramm',
-        // component: LiniendiagrammComponent,
+        component: LiniendiagrammComponent,
         title: 'Liniendiagramm',
         canMatch: [isAdminGuard],
     },
@@ -71,7 +71,7 @@ export const ROUTES: Routes = [
     },
     {
         path: 'tortendiagramm',
-        // component: TortendiagrammComponent,
+        component: TortendiagrammComponent,
         title: 'Tortendiagramm',
         canMatch: [isAdminGuard],
     },
