@@ -7,9 +7,21 @@
     <div class="btn-group">
       <!-- angular-calendar https://github.com/mattlewis92/angular-calendar -->
       <!-- Alternative: Tempus Dominus https://getdatepicker.com -->
-      <div class="btn btn-primary" mwlCalendarPreviousView>&lt;</div>
+      <div
+        class="btn btn-secondary"
+        mwlCalendarPreviousView
+        style="background-color: #6619ff"
+      >
+        &lt;
+      </div>
       <div class="btn btn-outline-secondary" mwlCalendarToday>Heute</div>
-      <div class="btn btn-primary" mwlCalendarNextView>&gt;</div>
+      <div
+        class="btn btn-secondary"
+        mwlCalendarNextView
+        style="background-color: #6619ff"
+      >
+        &gt;
+      </div>
     </div>
     <mwl-calendar-month-view
       [viewDate]="today"

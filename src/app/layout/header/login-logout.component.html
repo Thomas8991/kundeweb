@@ -26,9 +26,9 @@
 >
   <button
     type="submit"
-    class="btn btn-primary"
-  >
-    <span class="me-1">Logout</span>
+    class="btn btn-secondary"
+    style="background-color: white">
+    <span class="me-1" style="color: #6619FF">Logout</span>
     <i class="material-icons md-48">chevron_right</i>
   </button>
 </form>
@@ -42,7 +42,7 @@
   >
     <div class="col-12">
       <label for="usernameInput" class="col-form-label">
-        <small>Benutzername</small>
+        <small style="color: white">Benutzername</small>
       </label>
       <input
         id="usernameInput"
@@ -58,7 +58,7 @@
 
     <div class="col-12">
       <label for="passwordInput" class="col-form-label">
-        <small>Passwort</small>
+        <small style="color: white">Passwort</small>
       </label>
       <input
         id="passwordInput"
@@ -74,11 +74,11 @@
     <div class="col-12">
       <button
         type="submit"
-        class="btn btn-primary btn-sm"
+        class="btn btn-secondary btn-sm"
         tabindex="3"
         (click)="onLogin()"
-      >
-        Login
+        style="background-color: white">
+        <span class="me-1" style="color: #6619FF">Login</span>
       </button>
     </div>
   </form>

@@ -1,13 +1,10 @@
-import { BalkendiagrammComponent } from './diagramme/balkendiagramm.component';
 import { CreateKundeComponent } from './create-kunde/create-kunde.component';
 import { DetailsKundeComponent } from './details-kunde/details-kunde.component';
 import { HomeComponent } from '../home/home.component';
-import { LiniendiagrammComponent } from './diagramme/liniendiagramm.component';
 import { UpdateKundeComponent } from './update-kunde/update-kunde.component';
 // eslint-disable-next-line sort-imports
 import { type Routes } from '@angular/router';
 import { SucheKundenComponent } from './suche-kunden/suche-kunden.component';
-import { TortendiagrammComponent } from './diagramme/tortendiagramm.component';
 import { canDeactivateGuard } from './create-kunde/create-deactivate.guard';
 
 // import { UpdatekundeComponent } from './update-kunde/update-kunde.component';
@@ -36,39 +33,6 @@ export const ROUTES: Routes = [
     //     component: HomeComponent,
     //    title: 'Beispiel',
     // },
-    {
-        path: 'balkendiagramm',
-        component: BalkendiagrammComponent,
-        title: 'Balkendiagramm',
-        canMatch: [isAdminGuard],
-    },
-    {
-        path: 'balkendiagramm',
-        component: HomeComponent,
-        title: 'Beispiel',
-    },
-    {
-        path: 'liniendiagramm',
-        component: LiniendiagrammComponent,
-        title: 'Liniendiagramm',
-        canMatch: [isAdminGuard],
-    },
-    {
-        path: 'liniendiagramm',
-        component: HomeComponent,
-        title: 'Beispiel',
-    },
-    {
-        path: 'tortendiagramm',
-        component: TortendiagrammComponent,
-        title: 'Tortendiagramm',
-        canMatch: [isAdminGuard],
-    },
-    {
-        path: 'tortendiagramm',
-        component: HomeComponent,
-        title: 'Beispiel',
-    },
 
     // id als Pfad-Parameter
     {

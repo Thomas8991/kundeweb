@@ -9,9 +9,11 @@
 -->
 
 <section class="card" [@fadeIn]="'in'">
-  <div class="card-header bg-primary">
-    <i class="material-icons">search</i>
-    <span class="ms-1 fw-bold"> Eingabe der Suchkriterien </span>
+  <div class="card-header" style="background-color: #6619ff">
+    <i class="material-icons" style="color: white">search</i>
+    <span class="ms-1 fw-bold" style="color: white">
+      Eingabe der Suchkriterien
+    </span>
   </div>
   <div class="card-body">
     <!--
@@ -60,7 +62,11 @@
       <div class="row">
         <div class="col offset-2 gy-3">
           <!-- default: type="submit" -->
-          <button type="submit" class="btn btn-primary">
+          <button
+            type="submit"
+            class="btn btn-secondary"
+            style="background-color: #6619ff"
+          >
             <i class="material-icons">search</i>
             <span class="ms-1">Suchen</span>
           </button>

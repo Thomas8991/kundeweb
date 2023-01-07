@@ -1,6 +1,6 @@
 <div class="card">
-  <div class="card-header">
-    <span class="ms-1 fw-bold">Neuer Kunde</span>
+  <div class="card-header" style="background-color: #6619ff">
+    <span class="ms-1 fw-bold" style="color: white">Neuer Kunde</span>
   </div>
 
   <div class="card-body">
@@ -52,8 +52,9 @@
         <div class="col offset-2 gy-3">
           <!-- [disabled]="..." fuer Input (= Property Binding) -->
           <button
+            style="background-color: #6619ff"
             type="submit"
-            class="btn btn-primary"
+            class="btn btn-secondary"
             [disabled]="createForm.invalid"
           >
             <i class="material-icons">check</i>
