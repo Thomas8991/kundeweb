@@ -85,16 +85,14 @@ export class UpdateKundeComponent implements OnInit {
         };
 
         const { kategorie } = this.form.value as { kategorie: number };
-        // const { email } = this.form.value as { email: string };
+        const { email } = this.form.value as { email: string };
 
         const { kunde, service } = this;
 
-        // datum, preis und rabatt koennen im Formular nicht geaendert werden
         kunde.nachname = nachname;
         kunde.geschlecht = geschlecht;
-
         kunde.kategorie = kategorie;
-        // kunde.email = email;
+        kunde.email = email;
         log.debug('UpdateKundeComponent.onSubmit: kunde=', kunde);
 
         service

@@ -34,6 +34,6 @@ export class UpdateEmailComponent implements OnInit {
         );
         // siehe formControlName innerhalb @Component({templateUrl: ...})
         this.email = new FormControl(this.currentValue, [Validators.required]);
-        this.form.addControl('titel', this.email);
+        this.form.addControl('email', this.email);
     }
 }
