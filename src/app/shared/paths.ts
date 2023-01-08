@@ -29,6 +29,6 @@
  * Basis-Pfade fuer den REST-Server via Reverse Proxy
  */
 export const paths = {
-    base: '/rest',
+    base: '/rest/rest',
     login: '/rest/auth/login',
 };

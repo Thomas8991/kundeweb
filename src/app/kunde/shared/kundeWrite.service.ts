@@ -71,9 +71,20 @@ export class KundeWriteService {
             Accept: 'text/plain',
         });
         /* eslint-enable @typescript-eslint/naming-convention */
+        log.debug('! URL: ', this.#baseUrl);
+
+        // output: JSON;
+        // obj: any = 
+        // {
+        // "kunde": { toKundeServer(kunde) },
+        // "user":{"username": "test", "password": "Pass123."}
+        // };
+
+        const kundeString = JSON.stringify(toKundeServer(kunde));
+        const jsonString = '{"kunde":'+ kundeString + ',"user":{ "username":"test", "password":"Pass123." }}';
 
         return this.httpClient
-            .post(this.#baseUrl, toKundeServer(kunde), {
+            .post(this.#baseUrl, JSON.parse(jsonString), {
                 headers,
                 observe: 'response',
                 responseType: 'text',

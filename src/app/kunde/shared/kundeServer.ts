@@ -112,6 +112,9 @@ export const toKundeServer = (kunde: Kunde): KundeServer => {
         kunde.geburtsdatum === undefined
             ? Temporal.Now.plainDateTimeISO().toString()
             : kunde.geburtsdatum.toString();
+    // const geburtsdatum = kunde.geburtsdatum?.toString();
+
+    // log.debug('TEEEEEEEEEEEEST: ', kunde.geburtsdatum.toString());
     return {
         nachname: kunde.nachname,
         email: kunde.email,
