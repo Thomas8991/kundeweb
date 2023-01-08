@@ -34,13 +34,7 @@
           <td (click)="onClick(kunde)">{{ idx + 1 }}</td>
           <td (click)="onClick(kunde)">{{ kunde.id }}</td>
           <td (click)="onClick(kunde)">{{ kunde.nachname }}</td>
-          <td (click)="onClick(kunde)">
-            <span [ngSwitch]="kunde.email">
-              <span *ngSwitchCase="'FOO_VERLAG'">Foo Email</span>
-              <span *ngSwitchCase="'BAR_VERLAG'">Bar Email</span>
-              <span *ngSwitchDefault>unbekannt</span>
-            </span>
-          </td>
+          <td (click)="onClick(kunde)">{{ kunde.email }}</td>
           <td>
             <!-- Pfad /:id, in kunde-routing.module.ts -->
             <a
