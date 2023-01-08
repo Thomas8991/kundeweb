@@ -1,16 +1,12 @@
 <div class="row">
-  <label class="col col-2 col-form-label gy-3">Email</label>
+  <label class="col col-2 col-form-label gy-3">E-Mail</label>
   <div class="col col-10 gy-3">
-    <select
-      class="form-select"
+    <input
+      class="form-control"
       title="Email"
       [(ngModel)]="email"
       name="email"
-      (change)="onChange($event)"
-    >
-      <option value=""></option>
-      <option value="FOO_VERLAG">Foo Email</option>
-      <option value="BAR_VERLAG">Bar Email</option>
-    </select>
+      (blur)="onBlur()"
+    />
   </div>
 </div>

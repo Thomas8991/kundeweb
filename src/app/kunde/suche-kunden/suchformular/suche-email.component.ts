@@ -13,19 +13,17 @@ import log from 'loglevel';
     standalone: true,
 })
 export class SucheEmailComponent {
-    protected email: string | undefined;
+    protected email = '';
 
     @Output()
     protected readonly email$ = new Subject<string>();
 
     constructor() {
-        log.debug('SucheVerlagComponent.constructor()');
+        log.debug('SucheEmailComponent.constructor()');
     }
 
-    onChange(event: Event) {
-        // https://stackoverflow.com/questions/44321326/property-value-does-not-exist-on-type-eventtarget-in-typescript
-        const { value } = event.target as HTMLSelectElement;
-        log.debug('SucheEmailComponent.onChange: value=', value);
-        this.email$.next(value);
+    onBlur() {
+        log.debug(`SucheEmailComponent.onBlur: nachname=${this.email}`);
+        this.email$.next(this.email);
     }
 }

@@ -84,22 +84,17 @@ export class UpdateKundeComponent implements OnInit {
             geschlecht: GeschlechtType;
         };
 
-        const { ort } = this.form.value as { ort: string };
-        const { plz } = this.form.value as { plz: string };
-
         const { kategorie } = this.form.value as { kategorie: number };
-        const { email } = this.form.value as { email: string };
+        // const { email } = this.form.value as { email: string };
 
         const { kunde, service } = this;
 
         // datum, preis und rabatt koennen im Formular nicht geaendert werden
         kunde.nachname = nachname;
         kunde.geschlecht = geschlecht;
-        kunde.adresse.ort = ort;
-        kunde.adresse.plz = plz;
 
         kunde.kategorie = kategorie;
-        kunde.email = email;
+        // kunde.email = email;
         log.debug('UpdateKundeComponent.onSubmit: kunde=', kunde);
 
         service
@@ -171,7 +166,6 @@ export class UpdateKundeComponent implements OnInit {
         switch (statuscode) {
             case HttpStatusCode.UnprocessableEntity: {
                 const { cause } = result;
-                // TODO Aufbereitung der Fehlermeldung: u.a. Anfuehrungszeichen
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 this.errorMsg =
                     cause instanceof HttpErrorResponse
