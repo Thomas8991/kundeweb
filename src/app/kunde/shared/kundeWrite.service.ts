@@ -74,14 +74,17 @@ export class KundeWriteService {
         log.debug('! URL: ', this.#baseUrl);
 
         // output: JSON;
-        // obj: any = 
+        // obj: any =
         // {
         // "kunde": { toKundeServer(kunde) },
         // "user":{"username": "test", "password": "Pass123."}
         // };
 
         const kundeString = JSON.stringify(toKundeServer(kunde));
-        const jsonString = '{"kunde":'+ kundeString + ',"user":{ "username":"test", "password":"Pass123." }}';
+        const jsonString =
+            '{"kunde":' +
+            kundeString +
+            ',"user":{ "username":"test", "password":"Pass123." }}';
 
         return this.httpClient
             .post(this.#baseUrl, JSON.parse(jsonString), {

@@ -108,11 +108,13 @@ export const toKunde = (kundeServer: KundeServer, etag?: string) => {
  * @return Das JSON-Objekt f&uuml;r den RESTful Web Service
  */
 export const toKundeServer = (kunde: Kunde): KundeServer => {
-    const geburtsdatum =
-        kunde.geburtsdatum === undefined
-            ? Temporal.Now.plainDateTimeISO().toString()
-            : kunde.geburtsdatum.toString();
-    // const geburtsdatum = kunde.geburtsdatum?.toString();
+    log.debug('TEEEEEEEEEEEEST: ', kunde.geburtsdatum);
+    // const geburtsdatum =
+    //     kunde.geburtsdatum === undefined
+    //         ? new Temporal.PlainDateTime(2023, 1, 5).toString()
+    //         : kunde.geburtsdatum.toString();
+
+    const geburtsdatum = new Temporal.PlainDateTime(2023, 1, 5).toString();
 
     // log.debug('TEEEEEEEEEEEEST: ', kunde.geburtsdatum.toString());
     return {
