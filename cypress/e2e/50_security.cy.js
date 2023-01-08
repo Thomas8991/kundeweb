@@ -20,12 +20,12 @@
 import { login, logout } from './login';
 
 // Pfade
-const buecherPath = '/buecher';
-const createPath = `${buecherPath}/create`;
-const updatePath = `${buecherPath}/update`;
-const balkendiagrammPath = `${buecherPath}/balkendiagramm`;
-const liniendiagrammPath = `${buecherPath}/liniendiagramm`;
-const tortendiagrammPath = `${buecherPath}/tortendiagramm`;
+const kundenPath = '/kunden';
+const createPath = `${kundenPath}/create`;
+const updatePath = `${kundenPath}/update`;
+const balkendiagrammPath = `${kundenPath}/balkendiagramm`;
+const liniendiagrammPath = `${kundenPath}/liniendiagramm`;
+const tortendiagrammPath = `${kundenPath}/tortendiagramm`;
 
 // CSS-Selektoren in <main>
 const mainSelektor = 'hs-root hs-main';

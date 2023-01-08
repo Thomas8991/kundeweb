@@ -1,0 +1,16 @@
+<div class="row mt-2">
+  <label class="col col-1"> Newsletter </label>
+  <div class="col col-11">
+    <input
+      type="checkbox"
+      checked
+      disabled
+      class="checkbox"
+      *ngIf="newsletter"
+    />
+    <!--else keinNewsletter"-->
+    <ng-template #keinNewsltter>
+      <input type="checkbox" disabled class="checkbox" />
+    </ng-template>
+  </div>
+</div>

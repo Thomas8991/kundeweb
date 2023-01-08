@@ -21,13 +21,13 @@ import { login, logout } from './login';
 
 // CSS-Selektoren in der Navigationsleiste, vgl.: XPath
 const navSelektor = 'hs-root hs-header hs-nav';
-const suchePath = '/buecher/suche';
+const suchePath = '/kunden/suche';
 const sucheSelektor = `${navSelektor} ul li a[routerLink="${suchePath}"]`;
 
 // CSS-Selektoren in <main>
 const mainSelektor = 'hs-root hs-main';
-const suchformularSelektor = `${mainSelektor} hs-suche-buecher hs-suchformular`;
-const gefundeneBuecherSelektor = `${mainSelektor} hs-suchergebnis hs-gefundene-buecher`;
+const suchformularSelektor = `${mainSelektor} hs-suche-kunden hs-suchformular`;
+const gefundeneKundenSelektor = `${mainSelektor} hs-suchergebnis hs-gefundene-kunden`;
 const detailsSelektor = `${mainSelektor} hs-details-kunde`;
 const bearbeitenSelektor = `${detailsSelektor} hs-details-bearbeiten`;
 
@@ -66,7 +66,7 @@ describe('Aendern', () => {
             cy.get('#titelInput').type(titel);
             cy.get('button').click();
         });
-        cy.get(`${gefundeneBuecherSelektor} tr td:nth-child(2)`)
+        cy.get(`${gefundeneKundenSelektor} tr td:nth-child(2)`)
             .contains(kundeId)
             .click();
 

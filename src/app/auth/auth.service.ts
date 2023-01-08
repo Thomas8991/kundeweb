@@ -28,7 +28,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import log from 'loglevel';
 
-export const ROLLE_ADMIN = 'admin';
+export const ROLLE_ADMIN = 'ADMIN';
 // Spring Security:
 // export const ROLLE_ADMIN = 'ROLE_ADMIN'
 
@@ -125,6 +125,7 @@ export class AuthService {
      *         sonst false.
      */
     get isAdmin() {
+        log.debug(this.roles);
         return getRoles().includes(ROLLE_ADMIN);
     }
 

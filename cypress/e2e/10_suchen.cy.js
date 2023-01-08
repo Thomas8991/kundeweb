@@ -19,14 +19,14 @@
 
 // CSS-Selektoren in der Navigationsleiste, vgl.: XPath
 const navSelektor = 'hs-root hs-header hs-nav';
-const suchePath = '/buecher/suche';
+const suchePath = '/kunden/suche';
 const sucheSelektor = `${navSelektor} ul li a[routerLink="${suchePath}"]`;
 
 // CSS-Selektoren in <main>
 const mainSelektor = 'hs-root hs-main';
-const suchformularSelektor = `${mainSelektor} hs-suche-buecher hs-suchformular`;
+const suchformularSelektor = `${mainSelektor} hs-suche-kunden hs-suchformular`;
 const suchergebnisSelektor = `${mainSelektor} hs-suchergebnis`;
-const gefundeneBuecherSelektor = `${suchergebnisSelektor} hs-gefundene-buecher`;
+const gefundeneKundenSelektor = `${suchergebnisSelektor} hs-gefundene-kunden`;
 const errorSucheSelektor = `${suchergebnisSelektor} hs-error-message div span`;
 const detailsSelektor = `${mainSelektor} hs-details-kunde`;
 
@@ -71,7 +71,7 @@ describe('Suchen', () => {
         });
 
         // Then
-        cy.get(`${gefundeneBuecherSelektor} tr td:nth-child(3)`).each(
+        cy.get(`${gefundeneKundenSelektor} tr td:nth-child(3)`).each(
             // eslint-disable-next-line arrow-parens
             (elem) => {
                 expect(elem.text()).to.contain(titel);
@@ -93,7 +93,7 @@ describe('Suchen', () => {
 
         // Then
         // <span> wegen [ngSwitch]
-        cy.get(`${gefundeneBuecherSelektor} tr td:nth-child(4) span span`).each(
+        cy.get(`${gefundeneKundenSelektor} tr td:nth-child(4) span span`).each(
             // eslint-disable-next-line arrow-parens
             (elem) => {
                 cy.wrap(elem).should('have.text', verlag);
@@ -116,7 +116,7 @@ describe('Suchen', () => {
 
         // Then
         cy.get(
-            `${gefundeneBuecherSelektor} tr td:nth-child(5) span:nth-child(1) span span`,
+            `${gefundeneKundenSelektor} tr td:nth-child(5) span:nth-child(1) span span`,
         ).each(
             // eslint-disable-next-line arrow-parens
             (elem) => {
@@ -154,7 +154,7 @@ describe('Suchen', () => {
         cy.get(suchformularSelektor).within(() => {
             cy.get('button').click();
         });
-        cy.get(`${gefundeneBuecherSelektor} tr td:nth-child(2)`)
+        cy.get(`${gefundeneKundenSelektor} tr td:nth-child(2)`)
             .contains(kundeId)
             .click();
 
@@ -173,7 +173,7 @@ describe('Suchen', () => {
             cy.get('hs-suche-art label').contains(druckausgabe).click();
             cy.get('button').click();
         });
-        cy.get(`${gefundeneBuecherSelektor} tr td:nth-child(1)`)
+        cy.get(`${gefundeneKundenSelektor} tr td:nth-child(1)`)
             .first()
             .click();
 

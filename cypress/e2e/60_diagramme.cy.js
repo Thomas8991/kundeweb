@@ -22,11 +22,11 @@ import { login } from './login';
 // CSS-Selektoren in der Navigationsleiste
 const navSelektor = 'hs-root hs-header hs-nav';
 const diagrammeSelektor = '#navbarDropdownMenuLink';
-const balkendiagrammPath = '/buecher/balkendiagramm';
+const balkendiagrammPath = '/kunden/balkendiagramm';
 const balkendiagrammMenuSelektor = `${navSelektor} ul li[class="nav-item dropdown"] a[routerLink="${balkendiagrammPath}"]`;
-const liniendiagrammPath = '/buecher/liniendiagramm';
+const liniendiagrammPath = '/kunden/liniendiagramm';
 const liniendiagrammMenuSelektor = `${navSelektor} ul li[class="nav-item dropdown"] a[routerLink="${liniendiagrammPath}"]`;
-const tortendiagrammPath = '/buecher/tortendiagramm';
+const tortendiagrammPath = '/kunden/tortendiagramm';
 const tortendiagrammMenuSelektor = `${navSelektor} ul li[class="nav-item dropdown"] a[routerLink="${tortendiagrammPath}"]`;
 
 // CSS-Selektoren in <main>

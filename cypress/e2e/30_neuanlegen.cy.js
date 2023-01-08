@@ -21,9 +21,9 @@ import { login, logout } from './login';
 
 // CSS-Selektoren in der Navigationsleiste
 const navSelektor = 'hs-root hs-header hs-nav';
-const createPath = '/buecher/create';
+const createPath = '/kunden/create';
 const createMenuSelektor = `${navSelektor} ul li a[routerLink="${createPath}"]`;
-const suchePath = '/buecher/suche';
+const suchePath = '/kunden/suche';
 const sucheSelektor = `${navSelektor} ul li a[routerLink="${suchePath}"]`;
 
 // CSS-Selektoren in <main>
@@ -34,8 +34,8 @@ const createSelektor = `${mainSelektor} hs-create-kunde`;
 const ratingCreateSelektor = 'hs-create-rating select';
 const verlagCreateSelektor = 'hs-create-verlag select';
 
-const suchformularSelektor = `${mainSelektor} hs-suche-buecher hs-suchformular`;
-const gefundeneBuecherSelektor = `${mainSelektor} hs-suchergebnis hs-gefundene-buecher`;
+const suchformularSelektor = `${mainSelektor} hs-suche-kunden hs-suchformular`;
+const gefundeneKundenSelektor = `${mainSelektor} hs-suchergebnis hs-gefundene-kunden`;
 
 /* global Cypress, cy, describe, it, beforeEach, afterEach, expect */
 
@@ -81,7 +81,7 @@ describe('Neuanlegen', () => {
             cy.get('#titelInput').type(titel);
             cy.get('button').click();
         });
-        cy.get(`${gefundeneBuecherSelektor} tr td:nth-child(3)`).each(
+        cy.get(`${gefundeneKundenSelektor} tr td:nth-child(3)`).each(
             // eslint-disable-next-line arrow-parens
             (elem) => {
                 expect(elem.text()).to.contain(titel);

@@ -1,0 +1,55 @@
+<div class="row">
+  <label for="waehrungInput" class="col col-2 col-form-label gy-3">
+    Waehrung *
+  </label>
+  <div class="col col-10 gy-3" [formGroup]="createForm">
+    <div class="input-group">
+      <input
+        id="waehrungInput"
+        placeholder="Waehrung"
+        class="form-control"
+        autofocus
+        formControlName="waehrung"
+        [class.is-invalid]="waehrung.invalid && waehrung.touched"
+        [class.is-valid]="waehrung.valid && waehrung.touched"
+      />
+
+      <div
+        class="invalid-feedback"
+        *ngIf="waehrung.invalid && waehrung.touched && waehrung.errors"
+      >
+        <i class="material-icons">error</i>
+        <span class="ms-1" *ngIf="waehrung.errors['required']">
+          Eine Waehrung muss eingegeben werden.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <label for="betragInput" class="col col-2 col-form-label gy-3"
+    >Betrag *</label
+  >
+  <div class="col col-10 gy-3" [formGroup]="createForm">
+    <div class="input-group">
+      <input
+        id="betragInput"
+        placeholder="Betrag, z.B. 123.45"
+        class="form-control"
+        type="number"
+        formControlName="betrag"
+        [class.is-invalid]="betrag.invalid && betrag.touched"
+        [class.is-valid]="betrag.valid && betrag.touched"
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="betrag.invalid && betrag.touched && betrag.errors"
+      >
+        <i class="material-icons">error</i>
+        <span class="ms-1" *ngIf="betrag.errors['required']">
+          Ein Betrag muss eingegeben werden, z.B. 123.45.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
