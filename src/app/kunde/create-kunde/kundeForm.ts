@@ -1,6 +1,6 @@
 import type { InteresseType } from '../shared/kunde';
-import { type KundeSharedWrite } from '../shared/kunde';
 import { type Kunde } from '../shared';
+import { type KundeSharedWrite } from '../shared/kunde';
 import { Temporal } from '@js-temporal/polyfill';
 import log from 'loglevel';
 
