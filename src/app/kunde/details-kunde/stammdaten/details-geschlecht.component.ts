@@ -1,5 +1,6 @@
 import { Component, Input, type OnInit } from '@angular/core';
 import type { GeschlechtType } from '../../shared/kunde';
+// eslint-disable-next-line sort-imports
 import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import log from 'loglevel';
 

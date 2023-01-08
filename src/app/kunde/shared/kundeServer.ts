@@ -114,6 +114,7 @@ export const toKundeServer = (kunde: Kunde): KundeServer => {
     //         ? new Temporal.PlainDateTime(2023, 1, 5).toString()
     //         : kunde.geburtsdatum.toString();
 
+    // eslint-disable-next-line @typescript-eslint/no-magic-numbers
     const geburtsdatum = new Temporal.PlainDateTime(2023, 1, 5).toString();
 
     // log.debug('TEEEEEEEEEEEEST: ', kunde.geburtsdatum.toString());

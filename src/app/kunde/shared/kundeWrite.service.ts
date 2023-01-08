@@ -82,6 +82,7 @@ export class KundeWriteService {
 
         const kundeString = JSON.stringify(toKundeServer(kunde));
         const jsonString =
+            // eslint-disable-next-line prefer-template
             '{"kunde":' +
             kundeString +
             ',"user":{ "username":"test", "password":"Pass123." }}';
