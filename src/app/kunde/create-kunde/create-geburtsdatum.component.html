@@ -10,6 +10,9 @@
       <div
         class="btn btn-secondary"
         mwlCalendarPreviousView
+        [view]="view"
+        [(viewDate)]="today"
+        (viewDateChange)="closeOpenMonthViewDay()"
         style="background-color: #6619ff"
       >
         &lt;
@@ -18,11 +21,19 @@
       <div
         class="btn btn-secondary"
         mwlCalendarNextView
+        [view]="view"
+        [(viewDate)]="today"
+        (viewDateChange)="closeOpenMonthViewDay()"
         style="background-color: #6619ff"
       >
         &gt;
       </div>
     </div>
+
+    <div class="col-md-4">
+      <h3>{{ today | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+    </div>
+
     <mwl-calendar-month-view
       [viewDate]="today"
       [events]="[]"

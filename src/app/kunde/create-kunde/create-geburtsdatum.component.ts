@@ -1,5 +1,6 @@
 import { Component, Input, type OnInit } from '@angular/core';
 import { FormControl, type FormGroup } from '@angular/forms';
+import { CalendarView } from 'angular-calendar';
 import log from 'loglevel';
 
 /**
@@ -14,7 +15,11 @@ export class CreateGeburtsdatumComponent implements OnInit {
     @Input()
     createForm!: FormGroup;
 
-    readonly today = new Date();
+    today = new Date();
+
+    activeDayIsOpen = true;
+
+    view: CalendarView = CalendarView.Month;
 
     readonly geburtsdatum = new FormControl(this.today);
 
@@ -27,5 +32,9 @@ export class CreateGeburtsdatumComponent implements OnInit {
     dayClicked({ date }: { date: Date }): void {
         log.debug('CreateGeburtsdatumComponent: dayClicked', date);
         this.createForm.setControl('geburtsdatum', new FormControl(date));
+    }
+
+    closeOpenMonthViewDay() {
+        this.activeDayIsOpen = false;
     }
 }
