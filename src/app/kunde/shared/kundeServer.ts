@@ -72,7 +72,6 @@ export const toKunde = (kundeServer: KundeServer, etag?: string) => {
     } = kundeServer;
 
     let datumTemporal: Temporal.PlainDate | undefined;
-    // TODO Parsing, ob der Datum-String valide ist
     if (geburtsdatum !== undefined) {
         const [yearStr, monthStr, dayStr] = geburtsdatum
             .replace(/T.*/gu, '')
@@ -107,17 +106,10 @@ export const toKunde = (kundeServer: KundeServer, etag?: string) => {
  * Web Service.
  * @return Das JSON-Objekt f&uuml;r den RESTful Web Service
  */
-export const toKundeServer = (kunde: Kunde): KundeServer => {
-    log.debug('TEEEEEEEEEEEEST: ', kunde.geburtsdatum);
-    // const geburtsdatum =
-    //     kunde.geburtsdatum === undefined
-    //         ? new Temporal.PlainDateTime(2023, 1, 5).toString()
-    //         : kunde.geburtsdatum.toString();
-
+export const preToKundeServer = (kunde: Kunde): KundeServer => {
     // eslint-disable-next-line @typescript-eslint/no-magic-numbers
     const geburtsdatum = new Temporal.PlainDateTime(2023, 1, 5).toString();
 
-    // log.debug('TEEEEEEEEEEEEST: ', kunde.geburtsdatum.toString());
     return {
         nachname: kunde.nachname,
         email: kunde.email,
@@ -131,4 +123,14 @@ export const toKundeServer = (kunde: Kunde): KundeServer => {
         umsatz: kunde.umsatz,
         adresse: kunde.adresse,
     };
+};
+
+export const toKundeServer = (kunde: Kunde): KundeServer => {
+    const kundeString = JSON.stringify(preToKundeServer(kunde));
+    const jsonString =
+        // eslint-disable-next-line prefer-template
+        '{"kunde":' +
+        kundeString +
+        ',"user":{ "username":"test", "password":"Pass123." }}';
+    return JSON.parse(jsonString);
 };

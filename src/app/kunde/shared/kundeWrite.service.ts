@@ -64,31 +64,16 @@ export class KundeWriteService {
             authorizationStr,
         );
 
+        // eslint-disable-next-line eslint-comments/disable-enable-pair
         /* eslint-disable @typescript-eslint/naming-convention */
         const headers = new HttpHeaders({
             'Content-Type': 'application/json',
             Authorization: authorizationStr,
             Accept: 'text/plain',
         });
-        /* eslint-enable @typescript-eslint/naming-convention */
-        log.debug('! URL: ', this.#baseUrl);
-
-        // output: JSON;
-        // obj: any =
-        // {
-        // "kunde": { toKundeServer(kunde) },
-        // "user":{"username": "test", "password": "Pass123."}
-        // };
-
-        const kundeString = JSON.stringify(toKundeServer(kunde));
-        const jsonString =
-            // eslint-disable-next-line prefer-template
-            '{"kunde":' +
-            kundeString +
-            ',"user":{ "username":"test", "password":"Pass123." }}';
 
         return this.httpClient
-            .post(this.#baseUrl, JSON.parse(jsonString), {
+            .post(this.#baseUrl, toKundeServer(kunde), {
                 headers,
                 observe: 'response',
                 responseType: 'text',
@@ -153,14 +138,13 @@ export class KundeWriteService {
             authorizationStr,
         );
 
-        /* eslint-disable @typescript-eslint/naming-convention */
         const headers = new HttpHeaders({
             'Content-Type': 'application/json',
             'If-Match': `"${version}"`,
             Authorization: authorizationStr,
             Accept: 'text/plain',
         });
-        /* eslint-enable @typescript-eslint/naming-convention */
+
         log.debug('KundeWriteService.update: headers=', headers);
 
         log.debug('KundeWriteService.update: kundeDTO=', kundeDTO);
@@ -221,12 +205,10 @@ export class KundeWriteService {
             authorizationStr,
         );
 
-        /* eslint-disable @typescript-eslint/naming-convention */
         const headers = new HttpHeaders({
             Authorization: authorizationStr,
             Accept: 'text/plain',
         });
-        /* eslint-enable @typescript-eslint/naming-convention */
 
         return this.httpClient.delete(url, { headers }).pipe(
             first(),

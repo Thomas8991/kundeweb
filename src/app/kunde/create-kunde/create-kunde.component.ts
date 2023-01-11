@@ -19,7 +19,6 @@ import { KundeWriteService } from '../shared/kundeWrite.service'; // eslint-disa
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import { SaveError } from '../shared/errors';
-// import { Title } from '@angular/platform-browser'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import log from 'loglevel';
 
 /**
@@ -131,7 +130,6 @@ export class CreateKundeComponent {
         switch (statuscode) {
             case HttpStatusCode.UnprocessableEntity: {
                 const { cause } = err;
-                // TODO Aufbereitung der Fehlermeldung: u.a. Anfuehrungszeichen
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 this.errorMsg =
                     cause instanceof HttpErrorResponse

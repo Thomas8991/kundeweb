@@ -6,7 +6,6 @@ import {
     ReactiveFormsModule,
 } from '@angular/forms';
 import { NgIf } from '@angular/common';
-// import { EMAIL_REGEX } from '../shared';
 import log from 'loglevel';
 
 /**

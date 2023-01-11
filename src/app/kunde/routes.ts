@@ -6,11 +6,6 @@ import { UpdateKundeComponent } from './update-kunde/update-kunde.component';
 import { type Routes } from '@angular/router';
 import { SucheKundenComponent } from './suche-kunden/suche-kunden.component';
 import { canDeactivateGuard } from './create-kunde/create-deactivate.guard';
-
-// import { UpdatekundeComponent } from './update-kunde/update-kunde.component';
-// import { DetailskundeComponent } from './details-kunde/details-kunde.component';
-// import { SucheBuecherComponent } from './suche-buecher/suche-buecher.component';
-// import { canDeactivateGuard } from './create-kunde/create-deactivate.guard';
 import { isAdminGuard } from '../auth/isAdmin.guard';
 
 // Route-Definitionen fuer das Feature-Modul "kunde":
