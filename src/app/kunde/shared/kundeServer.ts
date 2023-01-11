@@ -131,6 +131,6 @@ export const toKundeServer = (kunde: Kunde): KundeServer => {
         // eslint-disable-next-line prefer-template
         '{"kunde":' +
         kundeString +
-        ',"user":{ "username":"test", "password":"Pass123." }}';
+        ',"user":{ "username":"omikron", "password":"Pass123." }}';
     return JSON.parse(jsonString);
 };
