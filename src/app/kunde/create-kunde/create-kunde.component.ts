@@ -19,7 +19,6 @@ import { KundeWriteService } from '../shared/kundeWrite.service'; // eslint-disa
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import { SaveError } from '../shared/errors';
-// import { Title } from '@angular/platform-browser'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import log from 'loglevel';
 
 /**
@@ -66,10 +65,6 @@ export class CreateKundeComponent {
         );
     }
 
-    // ngOnInit() {
-    //     this.titleService.setTitle('Neuer Kunde');
-    // }
-
     /**
      * Die Methode <code>onSubmit</code> realisiert den Event-Handler, wenn das
      * Formular abgeschickt wird, um ein neues Kunde anzulegen.
@@ -77,14 +72,6 @@ export class CreateKundeComponent {
      *         zu konsumieren.
      */
     onSubmit() {
-        // In einem Control oder in einer FormGroup gibt es u.a. folgende
-        // Properties
-        //    value     JSON-Objekt mit den IDs aus der FormGroup als
-        //              Schluessel und den zugehoerigen Werten
-        //    errors    Map<string,any> mit den Fehlern, z.B. {'required': true}
-        //    valid/invalid     fuer valide Werte
-        //    dirty/pristine    falls der Wert geaendert wurde
-
         if (this.createForm.invalid) {
             log.debug(
                 'CreateKundeComponent.onSave: Validierungsfehler',

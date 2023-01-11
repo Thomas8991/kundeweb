@@ -5,10 +5,9 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { type GeschlechtType, type Kunde } from '../shared/kunde';
 import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { first, tap } from 'rxjs/operators';
+import { ErrorMessageComponent } from '../../shared/error-message.component';
 import { KundeReadService } from '../shared/kundeRead.service'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import { KundeWriteService } from '../shared/kundeWrite.service'; // eslint-disable-line @typescript-eslint/consistent-type-imports
-// eslint-disable-next-line sort-imports
-import { ErrorMessageComponent } from '../../shared/error-message.component';
 import { NgIf } from '@angular/common';
 import { Title } from '@angular/platform-browser'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import { UpdateAdresseComponent } from './update-adresse.component';
@@ -55,7 +54,6 @@ export class UpdateKundeComponent implements OnInit {
     }
 
     ngOnInit() {
-        // Pfad-Parameter aus /kunden/:id/update
         const id = this.route.snapshot.paramMap.get('id') ?? undefined;
 
         this.readService
@@ -83,7 +81,6 @@ export class UpdateKundeComponent implements OnInit {
         const { geschlecht } = this.form.value as {
             geschlecht: GeschlechtType;
         };
-
         const { kategorie } = this.form.value as { kategorie: number };
         const { email } = this.form.value as { email: string };
 

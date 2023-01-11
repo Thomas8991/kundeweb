@@ -34,17 +34,6 @@ export interface KundenServer {
 //  * patch(url, body, options) – HTTP PATCH request
 //  * delete(url, options) – HTTP DELETE request
 
-// Eine Service-Klasse ist eine "normale" Klasse gemaess ES 2015, die mittels
-// DI in eine Komponente injiziert werden kann, falls sie innerhalb von
-// provider: [...] bei einem Modulbereitgestellt wird.
-// Eine Komponente realisiert gemaess MVC-Pattern den Controller und die View.
-// Die Anwendungslogik wird vom Controller an Service-Klassen delegiert.
-// Service:
-// - wiederverwendbarer Code: in ggf. verschiedenen Controller
-// - Zugriff auf Daten, z.B. durch Aufruf von RESTful Web Services
-// - View (HTML-Template) <- Controller <- Service
-// https://angular.io/guide/singleton-services
-
 /**
  * Die Service-Klasse zu B&uuml;cher wird zum "Root Application Injector"
  * hinzugefuegt und ist in allen Klassen der Webanwendung verfuegbar.
@@ -72,20 +61,7 @@ export class KundeReadService {
         log.debug('KundeReadService.find: suchkriterien=', suchkriterien);
         log.debug('KundeReadService.find: url=', this.#baseUrl);
 
-        // Query-Parameter ?titel=x&art=KINDLE&...
         const params = this.#suchkriterienToHttpParams(suchkriterien);
-
-        // Promise:
-        // - Einzelner Wert
-        // - Kein Cancel
-        //
-        // Observable aus RxJS:
-        // - die Werte werden "lazy" in einem Stream bereitgestellt
-        // - Operatoren: map, forEach, filter, ...
-        // - Ausfuehrung nur dann, wenn es einen Aufruf von subscribe() gibt
-        // - firstValueFrom() konvertiert den ersten Wert in ein Promise
-        // - Cancel ist moeglich
-        // https://stackoverflow.com/questions/37364973/what-is-the-difference-between-promises-and-observables
 
         return (
             this.httpClient
@@ -106,11 +82,6 @@ export class KundeReadService {
                     map(restResult => this.#toKundeArrayOrError(restResult)),
                 )
         );
-
-        // Same-Origin-Policy verhindert Ajax-Datenabfragen an einen Server in
-        // einer anderen Domain. JSONP (= JSON mit Padding) ermoeglicht die
-        // Uebertragung von JSON-Daten ueber Domaingrenzen.
-        // Falls benoetigt, gibt es in Angular dafuer den Service Jsonp.
     }
 
     #toKundeArrayOrError(

@@ -24,12 +24,6 @@ import { toKundeServer } from './kundeServer';
 //  * patch(url, body, options) – HTTP PATCH request
 //  * delete(url, options) – HTTP DELETE request
 
-// Eine Service-Klasse ist eine "normale" Klasse gemaess ES 2015, die mittels
-// DI in eine Komponente injiziert werden kann, falls sie innerhalb von
-// provider: [...] bei einem Modul bereitgestellt wird.
-// Eine Komponente realisiert gemaess MVC-Pattern den Controller und die View.
-// Die Anwendungslogik wird vom Controller an Service-Klassen delegiert.
-
 /**
  * Die Service-Klasse zu B&uuml;cher wird zum "Root Application Injector"
  * hinzugefuegt und ist in allen Klassen der Webanwendung verfuegbar.
@@ -72,13 +66,6 @@ export class KundeWriteService {
         });
         /* eslint-enable @typescript-eslint/naming-convention */
         log.debug('! URL: ', this.#baseUrl);
-
-        // output: JSON;
-        // obj: any =
-        // {
-        // "kunde": { toKundeServer(kunde) },
-        // "user":{"username": "test", "password": "Pass123."}
-        // };
 
         const kundeString = JSON.stringify(toKundeServer(kunde));
         const jsonString =
@@ -137,7 +124,6 @@ export class KundeWriteService {
     update(kunde: Kunde): Observable<Kunde | UpdateError> {
         log.debug('KundeWriteService.update: kunde=', kunde);
 
-        // id, version und schlagwoerter gehoeren nicht zu den serverseitigen Nutzdaten
         const { id, version, ...kundeDTO } = kunde;
         if (version === undefined) {
             const msg = `Keine Versionsnummer fuer den Kunden ${id}`;

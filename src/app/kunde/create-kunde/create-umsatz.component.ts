@@ -9,7 +9,7 @@ import { NgIf } from '@angular/common';
 import log from 'loglevel';
 
 /**
- * Komponente mit dem Tag &lt;hs-create-preis&gt;, um das Erfassungsformular
+ * Komponente mit dem Tag &lt;hs-create-umsatz&gt;, um das Erfassungsformular
  * f&uuml;r einen neuen Kunden zu realisieren.
  */
 @Component({

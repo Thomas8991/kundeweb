@@ -2,7 +2,7 @@ import { Component, Input, type OnInit } from '@angular/core';
 import log from 'loglevel';
 
 /**
- * Komponente f&uuml;r das Tag <code>hs-details-rabatt</code>
+ * Komponente f&uuml;r das Tag <code>hs-details-Homepage</code>
  */
 @Component({
     selector: 'hs-details-homepage',

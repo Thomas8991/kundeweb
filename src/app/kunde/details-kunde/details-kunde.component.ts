@@ -3,7 +3,6 @@ import { Component, type OnInit } from '@angular/core';
 import { FindError, type Kunde } from '../shared';
 import { first, tap } from 'rxjs/operators';
 import { AuthService } from '../../auth/auth.service'; // eslint-disable-line @typescript-eslint/consistent-type-imports
-
 import { DetailsBearbeitenComponent } from './details-bearbeiten.component';
 import { DetailsBreadcrumbsComponent } from './details-breadcrumbs.component';
 import { DetailsInteressenComponent } from './interessen/details-interessen.component';
@@ -11,7 +10,6 @@ import { DetailsStammdatenComponent } from './stammdaten/details-stammdaten.comp
 import { ErrorMessageComponent } from '../../shared/error-message.component';
 import { HttpStatusCode } from '@angular/common/http';
 import { KundeReadService } from '../shared/kundeRead.service'; // eslint-disable-line @typescript-eslint/consistent-type-imports
-// import { type Observable } from 'rxjs';
 import { NgIf } from '@angular/common';
 import { Title } from '@angular/platform-browser'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import { WaitingComponent } from '../../shared/waiting.component';
@@ -42,8 +40,6 @@ export class DetailsKundeComponent implements OnInit {
     protected errorMsg: string | undefined;
 
     protected isAdmin!: boolean;
-
-    // appstate$!: Observable<Record<string, unknown> | undefined>;
 
     // eslint-disable-next-line max-params
     constructor(

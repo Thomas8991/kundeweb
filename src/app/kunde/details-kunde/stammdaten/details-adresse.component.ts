@@ -3,7 +3,7 @@ import type { Adresse } from '../../shared/adresse';
 import log from 'loglevel';
 
 /**
- * Komponente f&uuml;r das Tag <code>hs-details-verlag</code>
+ * Komponente f&uuml;r das Tag <code>hs-details-adresse</code>
  */
 @Component({
     selector: 'hs-details-adresse',

@@ -5,7 +5,7 @@ import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import log from 'loglevel';
 
 /**
- * Komponente f&uuml;r das Tag <code>hs-details-art</code>
+ * Komponente f&uuml;r das Tag <code>hs-details-geschlecht</code>
  */
 @Component({
     selector: 'hs-details-geschlecht',
@@ -18,6 +18,6 @@ export class DetailsGeschlechtComponent implements OnInit {
     geschlecht!: GeschlechtType;
 
     ngOnInit() {
-        log.debug('DetailsArtComponent.art=', this.geschlecht);
+        log.debug('DetailsGeschlechtComponent.geschlecht=', this.geschlecht);
     }
 }

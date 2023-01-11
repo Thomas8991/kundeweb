@@ -3,7 +3,7 @@ import { CurrencyPipe, DecimalPipe } from '@angular/common';
 import log from 'loglevel';
 
 /**
- * Komponente f&uuml;r das Tag <code>hs-details-preis</code>
+ * Komponente f&uuml;r das Tag <code>hs-details-umsatz</code>
  */
 @Component({
     selector: 'hs-details-umsatz',

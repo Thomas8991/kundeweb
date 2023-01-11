@@ -4,21 +4,6 @@
   </div>
 
   <div class="card-body">
-    <!--
-        Template-Syntax:
-            [formGroup]="createForm"  fuer Input (= Property Binding)
-                                      d.h. formGroup fuer Attr. createForm
-            (submit)="...()"  fuer Output (= Event Binding)
-                              d.h. Ereignis submit an ...() anbinden
-            Definition von Attributnamen gemaess HTML: Attribute names
-            must consist of one or more characters other than the
-            space characters, U+0000 NULL, """, "'", ">", "/", "=",
-            the control characters, and any characters that are not
-            defined by Unicode.
-            https://github.com/angular/angular/issues/6786
-    -->
-    <!-- dynamisches Formular mit Validierung durch formGroup -->
-    <!-- https://angular.io/guide/reactive-forms -->
     <form [formGroup]="createForm" role="form" (submit)="onSubmit()">
       <div class="row has-warning mb-4" *ngIf="showWarning">
         <div class="col col-12 form-control-feedback">

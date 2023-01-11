@@ -10,7 +10,7 @@ import { NgIf } from '@angular/common';
 import log from 'loglevel';
 
 /**
- * Komponente f&uuml;r den CSS-Selektor <code>hs-update-titel</code>
+ * Komponente f&uuml;r den CSS-Selektor <code>hs-update-email</code>
  */
 @Component({
     selector: 'hs-update-email',

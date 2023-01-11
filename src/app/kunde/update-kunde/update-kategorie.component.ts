@@ -8,7 +8,7 @@ import {
 import log from 'loglevel';
 
 /**
- * Komponente f&uuml;r den CSS-Selektor <code>hs-update-rating</code>
+ * Komponente f&uuml;r den CSS-Selektor <code>hs-update-kategorie</code>
  */
 @Component({
     selector: 'hs-update-kategorie',

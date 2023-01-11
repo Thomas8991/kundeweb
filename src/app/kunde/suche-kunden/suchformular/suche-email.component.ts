@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import log from 'loglevel';
 
 /**
- * Komponente f&uuml;r den CSS-Selektor <code>hs-suche-verlag</code>
+ * Komponente f&uuml;r den CSS-Selektor <code>hs-suche-email</code>
  */
 @Component({
     selector: 'hs-suche-email',

@@ -22,19 +22,6 @@
           Stammdaten
         </a>
       </li>
-      <!--<li class="nav-item" *ngIf="kunde.interessen.length > 0">
-        <a
-          class="nav-link"
-          id="interessen-tab"
-          href="#interessen"
-          data-bs-toggle="tab"
-          role="tab"
-          aria-controls="interessen"
-          aria-expanded="true"
-        >
-          Schlagw&ouml;rter
-        </a>
-      </li>-->
     </ul>
 
     <div class="tab-content" id="kundeContent">
@@ -48,20 +35,6 @@
           <hs-details-stammdaten [kunde]="kunde"> </hs-details-stammdaten>
         </div>
       </div>
-
-      <!--
-        <div
-        class="tab-pane fade"
-        id="interessen"
-        role="tabpanel"
-        aria-labelledby="schlagwoerter-tab"
-        *ngIf="kunde.interessen.length > 0"
-      >
-        <div class="mt-2 ms-2">
-          <hs-details-interessen [values]="kunde.interessen">
-          </hs-details-interessen>
-        </div>
-      </div>-->
     </div>
 
     <hs-details-bearbeiten [id]="kunde.id" *ngIf="isAdmin">
