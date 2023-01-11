@@ -1,0 +1,37 @@
+@startuml Zustandsdiagramm
+hide empty description
+[*]--> index.html
+state index.html
+index.html -left-> suche_kunden.html : Suchfeld auswählen
+index.html -right-> create_kunden.html : Neuer Kunde
+
+state create_kunden.html
+create_kunden.html -down-> home.html : Kundenformationen eingeben
+
+state home.html
+home.html -left-> [*]
+
+state suche_kunden.html
+suche_kunden.html -down-> waiting.html : Suchkriterien eingeben
+
+state waiting.html
+waiting.html -down-> suchergebnis_kunden.html : Daten geladen
+
+state suchergebnis_kunden.html
+suchergebnis_kunden.html -left-> error_msg.html : Fehler bei Anfrage
+suchergebnis_kunden.html -right-> gefundene_kunden.html : Kunden gefunden
+
+state error_msg.html
+error_msg.html-down-> [*]
+
+state gefundene_kunden.html
+gefundene_kunden.html -down-> details_kunden.html : Kunde auswählen
+
+state details_kunden.html
+details_kunden.html -down-> [*] : Nicht bearbeiten
+details_kunden.html -down-> update_kunden.html : Bearbeiten
+
+state update_kunden.html
+update_kunden.html -down-> [*]
+
+@enduml

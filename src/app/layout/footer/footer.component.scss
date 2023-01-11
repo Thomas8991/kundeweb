@@ -16,6 +16,7 @@
 @use '../../sass/padding';
 
 footer {
+  // stylelint-disable-next-line color-no-hex
   background-color: #6619ff;
   bottom: 0;
   height: var(--height-footer);
