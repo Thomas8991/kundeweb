@@ -118,7 +118,6 @@ export class CreateKundeComponent {
         switch (statuscode) {
             case HttpStatusCode.UnprocessableEntity: {
                 const { cause } = err;
-                // TODO Aufbereitung der Fehlermeldung: u.a. Anfuehrungszeichen
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 this.errorMsg =
                     cause instanceof HttpErrorResponse
